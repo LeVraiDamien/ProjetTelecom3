@@ -1,0 +1,12 @@
+$ dump-meters s1
+OFPST_METER_CONFIG reply (OF1.3) (xid=0x2):
+meter=1 kbps burst bands=
+type=drop rate=20000 burst_size=2000
+$ dump-meters s2
+OFPST_METER_CONFIG reply (OF1.3) (xid=0x2):
+meter=1 kbps burst bands=
+type=drop rate=20000 burst_size=2000
+$ dump-meters s3
+OFPST_METER_CONFIG reply (OF1.3) (xid=0x2):
+meter=1 kbps burst bands=
+type=drop rate=20000 burst_size=2000

@@ -1,0 +1,6 @@
+OK   s1 attendu output:3
+    cookie=0x0, duration=2.217s, table=0, n_packets=3, n_bytes=294, priority=1,in_port=1,dl_src=00:00:00:00:00:01,dl_dst=00:00:00:00:00:04 actions=output:3
+OK   s2 attendu output:2
+    cookie=0x0, duration=2.220s, table=0, n_packets=3, n_bytes=294, priority=1,in_port=1,dl_src=00:00:00:00:00:01,dl_dst=00:00:00:00:00:04 actions=output:2
+OK   s3 attendu output:2
+    cookie=0x0, duration=2.222s, table=0, n_packets=3, n_bytes=294, priority=1,in_port=3,dl_src=00:00:00:00:00:01,dl_dst=00:00:00:00:00:04 actions=output:2

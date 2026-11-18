@@ -1,0 +1,29 @@
+gnb1 Up 50 minutes
+open5gs-and-ueransim-amf-1 Up 50 minutes
+open5gs-and-ueransim-ausf-1 Up 50 minutes
+open5gs-and-ueransim-bsf-1 Up 50 minutes
+open5gs-and-ueransim-mongo-1 Up 50 minutes
+open5gs-and-ueransim-nrf-1 Up 50 minutes
+open5gs-and-ueransim-nssf-1 Up 50 minutes
+open5gs-and-ueransim-pcf-1 Up 50 minutes
+open5gs-and-ueransim-scp-1 Up 50 minutes
+open5gs-and-ueransim-smf-1 Up 50 minutes
+open5gs-and-ueransim-udm-1 Up 50 minutes
+open5gs-and-ueransim-udr-1 Up 50 minutes
+open5gs-and-ueransim-ues1-1 Up 50 minutes
+open5gs-and-ueransim-upf-1 Up 50 minutes
+open5gs-and-ueransim-webui-1 Up 50 minutes
+project3-flexric Up 3 minutes
+scenario-a-osken Up 14 minutes
+scenario-b-django Up 50 minutes (healthy)
+scenario-b-jenkins Up 50 minutes (healthy)
+scenario-b-nginx Up 50 minutes
+app-net
+bridge
+dn-net
+host
+jenkins-net
+none
+open5gs-and-ueransim_default
+project3-ric-lab_ran-net
+security-net

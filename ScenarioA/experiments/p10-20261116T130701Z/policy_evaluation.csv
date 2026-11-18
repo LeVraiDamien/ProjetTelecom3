@@ -1,0 +1,15 @@
+mode,test,protocol,duration_s,payload_bytes,sender_mbps,receiver_mbps,sent_bytes,received_bytes,retransmits,offered_mbps,sent_packets,lost_packets,lost_percent,jitter_ms
+monitor,single_tcp,TCP,8,131072,103.2545,94.0469,103284736,95944704,25,,,,,
+monitor,single_udp_50M,UDP,8,1448,49.992,49.889,49995096,49966136,,50.0,34527,0,0,0.2219
+monitor,single_udp_1M_small,UDP,8,200,0.9999,0.9967,1000000,999200,,1.0,5000,0,0,1.3697
+monitor,compete_tcp,TCP,20,131072,17.2486,16.5977,43122688,41680896,96,,,,,
+monitor,compete_udp,UDP,20,1448,79.9951,79.5017,199991968,199750152,,80.0,138116,166,0.1202,0.1794
+monitor,compete_tcp_steady(t>=6s),,,,16.104,,,,,,,,,
+monitor,compete_udp_pcap_h4,,3.584,,,83.141,,,,,25000,,,
+enforce,single_tcp,TCP,8,131072,102.4747,92.32,102498304,94109696,14,,,,,
+enforce,single_udp_50M,UDP,8,1448,49.9922,30.1316,49995096,30183560,,50.0,34527,13681,39.6241,0.0202
+enforce,single_udp_1M_small,UDP,8,200,0.9999,0.9982,1000000,1000000,,1.0,5000,0,0,0.155
+enforce,compete_tcp,TCP,20,131072,70.7617,68.4174,176947200,172359680,38,,,,,
+enforce,compete_udp,UDP,20,1448,79.998,27.1553,199997760,68442616,,80.0,138120,90846,65.7732,0.425
+enforce,compete_tcp_steady(t>=6s),,,,78.996,,,,,,,,,
+enforce,compete_udp_pcap_h4,,12.18,,,19.822,,,,,20255,,,

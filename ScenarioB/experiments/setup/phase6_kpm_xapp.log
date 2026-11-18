@@ -1,0 +1,72 @@
+Setting the config -c file to /config/xapp_oran_moni.conf
+[LibConf]: loading service models from SM_DIR: /usr/local/lib/flexric/
+[LibConf]: reading configuration for xApp
+[LibConf]: NearRT_RIC IP: 10.20.11.30
+[LibConf]: E42_Port Port: 36422
+[LibConf]: Sub_ORAN_SM Name: KPM, Time: 1000
+[LibConf]: format 1, RAN type ngran_gNB_DU, actions = DRB.UEThpDl DRB.UEThpUl 
+[xAap]: Initializing ... 
+[xApp]: nearRT-RIC IP Address = 10.20.11.30, PORT = 36422
+[E2-AGENT]: Opening plugin from path = /usr/local/lib/flexric/libmac_sm.so 
+[E2-AGENT]: Opening plugin from path = /usr/local/lib/flexric/libkpm_sm.so 
+[E2-AGENT]: Opening plugin from path = /usr/local/lib/flexric/librc_sm.so 
+[E2-AGENT]: Opening plugin from path = /usr/local/lib/flexric/libslice_sm.so 
+[E2-AGENT]: Opening plugin from path = /usr/local/lib/flexric/libpdcp_sm.so 
+[E2-AGENT]: Opening plugin from path = /usr/local/lib/flexric/libgtp_sm.so 
+[E2-AGENT]: Opening plugin from path = /usr/local/lib/flexric/libtc_sm.so 
+[E2-AGENT]: Opening plugin from path = /usr/local/lib/flexric/librlc_sm.so 
+[NEAR-RIC]: Loading SM ID = 142 with def = MAC_STATS_V0 
+[NEAR-RIC]: Loading SM ID = 2 with def = ORAN-E2SM-KPM 
+[NEAR-RIC]: Loading SM ID = 3 with def = ORAN-E2SM-RC 
+[NEAR-RIC]: Loading SM ID = 145 with def = SLICE_STATS_V0 
+[NEAR-RIC]: Loading SM ID = 144 with def = PDCP_STATS_V0 
+[NEAR-RIC]: Loading SM ID = 148 with def = GTP_STATS_V0 
+[NEAR-RIC]: Loading SM ID = 146 with def = TC_STATS_V0 
+[NEAR-RIC]: Loading SM ID = 143 with def = RLC_STATS_V0 
+[xApp]: E42 SETUP-REQUEST tx
+[xApp]: E42 SETUP-RESPONSE rx 
+[xApp]: xApp ID = 7 
+[xApp]: Registered E2 Nodes = 1 
+Connected E2 nodes = 1
+Registered node 0 ran func id = 2 
+ Registered node 0 ran func id = 3 
+ [xApp]: reporting period = 1000 [ms]
+xApp subscribes RAN Func ID 2 in E2 node idx 0, nb_id 411
+E42_RIC_SUBSCRIPTION_REQUEST 40 
+[xApp]: E42 RIC SUBSCRIPTION REQUEST tx RAN_FUNC_ID 2 RIC_REQ_ID 1 
+[xApp]: SUBSCRIPTION RESPONSE rx
+[xApp]: Successfully subscribed to RAN_FUNC_ID 2 
+KPM-v3 ind_msg latency = -5379808131237441275 μs from E2-node type 7 ID 411
+meas record REAL_MEAS_VALUE value 0.000000
+meas record REAL_MEAS_VALUE value 0.000000
+KPM-v3 ind_msg latency = -6988887185954562247 μs from E2-node type 7 ID 411
+meas record REAL_MEAS_VALUE value 0.000000
+meas record REAL_MEAS_VALUE value 0.000000
+KPM-v3 ind_msg latency = -8586107655578799213 μs from E2-node type 7 ID 411
+meas record REAL_MEAS_VALUE value 0.000000
+meas record REAL_MEAS_VALUE value 0.000000
+KPM-v3 ind_msg latency = 8294786793363423735 μs from E2-node type 7 ID 411
+meas record REAL_MEAS_VALUE value 0.000000
+meas record REAL_MEAS_VALUE value 0.000000
+KPM-v3 ind_msg latency = 6091321519426262834 μs from E2-node type 7 ID 411
+meas record REAL_MEAS_VALUE value 7062.328125
+meas record REAL_MEAS_VALUE value 5.880000
+KPM-v3 ind_msg latency = 4146974628933874981 μs from E2-node type 7 ID 411
+meas record REAL_MEAS_VALUE value 13725.248047
+meas record REAL_MEAS_VALUE value 1.176000
+KPM-v3 ind_msg latency = 2129447543031603774 μs from E2-node type 7 ID 411
+meas record REAL_MEAS_VALUE value 13666.631836
+meas record REAL_MEAS_VALUE value 1.176000
+KPM-v3 ind_msg latency = 214295271826979457 μs from E2-node type 7 ID 411
+meas record REAL_MEAS_VALUE value 13572.320312
+meas record REAL_MEAS_VALUE value 1.200000
+KPM-v3 ind_msg latency = -1659753389260814185 μs from E2-node type 7 ID 411
+meas record REAL_MEAS_VALUE value 13571.832031
+meas record REAL_MEAS_VALUE value 1.200000
+[xApp]: E42 RIC_SUBSCRIPTION_DELETE_REQUEST tx RAN_FUNC_ID 2 RIC_REQ_ID 1 
+KPM-v3 ind_msg latency = -3377477739129047253 μs from E2-node type 7 ID 411
+meas record REAL_MEAS_VALUE value 13584.448242
+meas record REAL_MEAS_VALUE value 1.200000
+[xApp]: E42 SUBSCRIPTION DELETE RESPONSE rx
+[xApp]: Sucessfully stopped 
+Test xApp run SUCCESSFULLY

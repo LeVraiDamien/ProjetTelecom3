@@ -1,0 +1,41 @@
+mode,test,role,flow,proto,dport,expected_class,decided_class,correct,rate_mbps_at_decision,mean_pkt_bytes_at_decision,time_to_classify_s
+monitor,single_tcp,flux de donnees genere,7,TCP,5201,TCP_BULK,TCP_BULK,True,99.004,1973.2,2.13
+monitor,single_tcp,flux annexe (controle/ACK/retour),1,TCP,5201,TCP_LIGHT,TCP_LIGHT,True,0.007,107.9,9.173
+monitor,single_tcp,flux annexe (controle/ACK/retour),4,TCP,49086,TCP_LIGHT,TCP_LIGHT,True,0.041,740.6,9.164
+monitor,single_tcp,flux annexe (controle/ACK/retour),10,TCP,49098,TCP_LIGHT,TCP_LIGHT,True,1.82,66.0,2.124
+monitor,single_udp_50M,flux de donnees genere,19,UDP,5201,UDP_BULK,UDP_BULK,True,51.451,1490.0,2.733
+monitor,single_udp_50M,flux annexe (controle/ACK/retour),13,TCP,5201,TCP_LIGHT,UNCLASSIFIED,True,,,
+monitor,single_udp_50M,flux annexe (controle/ACK/retour),16,TCP,35316,TCP_LIGHT,UNCLASSIFIED,True,,,
+monitor,single_udp_50M,flux annexe (controle/ACK/retour),22,UDP,39127,UDP_LIGHT,UNCLASSIFIED,True,,,
+monitor,single_udp_1M_small,flux de donnees genere,31,UDP,5201,UDP_LIGHT,UDP_LIGHT,True,1.209,242.0,2.645
+monitor,single_udp_1M_small,flux annexe (controle/ACK/retour),25,TCP,5201,TCP_LIGHT,UNCLASSIFIED,True,,,
+monitor,single_udp_1M_small,flux annexe (controle/ACK/retour),28,TCP,43130,TCP_LIGHT,UNCLASSIFIED,True,,,
+monitor,single_udp_1M_small,flux annexe (controle/ACK/retour),34,UDP,40913,UDP_LIGHT,UNCLASSIFIED,True,,,
+monitor,compete_tcp,flux de donnees genere,49,TCP,5202,TCP_BULK,TCP_BULK,True,20.383,2701.5,2.549
+monitor,compete_tcp,flux annexe (controle/ACK/retour),37,TCP,5202,TCP_LIGHT,TCP_LIGHT,True,0.007,108.2,21.605
+monitor,compete_tcp,flux annexe (controle/ACK/retour),38,TCP,5201,TCP_LIGHT,TCP_LIGHT,True,0.007,100.2,21.603
+monitor,compete_tcp,flux annexe (controle/ACK/retour),43,TCP,57090,TCP_LIGHT,TCP_LIGHT,True,0.073,1300.7,21.597
+monitor,compete_tcp,flux annexe (controle/ACK/retour),44,TCP,53246,TCP_LIGHT,TCP_LIGHT,True,0.105,1460.7,21.596
+monitor,compete_tcp,flux annexe (controle/ACK/retour),55,TCP,57100,TCP_LIGHT,TCP_LIGHT,True,0.461,71.2,2.542
+monitor,compete_tcp,flux annexe (controle/ACK/retour),56,UDP,54542,UDP_LIGHT,UNCLASSIFIED,True,,,
+monitor,compete_udp_80M,flux de donnees genere,50,UDP,5201,UDP_BULK,UDP_BULK,True,82.155,1490.0,2.547
+enforce,single_tcp,flux de donnees genere,7,TCP,5201,TCP_BULK,TCP_BULK,True,99.037,1920.9,2.152
+enforce,single_tcp,flux annexe (controle/ACK/retour),1,TCP,5201,TCP_LIGHT,TCP_LIGHT,True,0.007,103.3,9.209
+enforce,single_tcp,flux annexe (controle/ACK/retour),4,TCP,54864,TCP_LIGHT,TCP_LIGHT,True,0.041,737.6,9.199
+enforce,single_tcp,flux annexe (controle/ACK/retour),10,TCP,54878,TCP_LIGHT,TCP_LIGHT,True,1.857,66.0,2.142
+enforce,single_udp_50M,flux de donnees genere,19,UDP,5201,UDP_BULK,UDP_BULK,True,51.502,1490.0,2.774
+enforce,single_udp_50M,flux annexe (controle/ACK/retour),13,TCP,5201,TCP_LIGHT,UNCLASSIFIED,True,,,
+enforce,single_udp_50M,flux annexe (controle/ACK/retour),16,TCP,34832,TCP_LIGHT,UNCLASSIFIED,True,,,
+enforce,single_udp_50M,flux annexe (controle/ACK/retour),22,UDP,34868,UDP_LIGHT,UNCLASSIFIED,True,,,
+enforce,single_udp_1M_small,flux de donnees genere,31,UDP,5201,UDP_LIGHT,UDP_LIGHT,True,1.212,242.0,2.706
+enforce,single_udp_1M_small,flux annexe (controle/ACK/retour),25,TCP,5201,TCP_LIGHT,UNCLASSIFIED,True,,,
+enforce,single_udp_1M_small,flux annexe (controle/ACK/retour),28,TCP,45184,TCP_LIGHT,UNCLASSIFIED,True,,,
+enforce,single_udp_1M_small,flux annexe (controle/ACK/retour),34,UDP,37823,UDP_LIGHT,UNCLASSIFIED,True,,,
+enforce,compete_tcp,flux de donnees genere,50,TCP,5202,TCP_BULK,TCP_BULK,True,16.025,2631.4,2.611
+enforce,compete_tcp,flux annexe (controle/ACK/retour),37,TCP,5201,TCP_LIGHT,TCP_LIGHT,True,0.01,127.5,21.674
+enforce,compete_tcp,flux annexe (controle/ACK/retour),38,TCP,5202,TCP_LIGHT,TCP_LIGHT,True,0.01,140.1,21.672
+enforce,compete_tcp,flux annexe (controle/ACK/retour),43,TCP,45428,TCP_LIGHT,TCP_LIGHT,True,0.111,1385.3,21.665
+enforce,compete_tcp,flux annexe (controle/ACK/retour),44,TCP,54670,TCP_LIGHT,TCP_LIGHT,True,0.073,1301.7,21.664
+enforce,compete_tcp,flux annexe (controle/ACK/retour),55,TCP,54672,TCP_LIGHT,TCP_LIGHT,True,0.385,70.0,2.605
+enforce,compete_tcp,flux annexe (controle/ACK/retour),56,UDP,35512,UDP_LIGHT,UNCLASSIFIED,True,,,
+enforce,compete_udp_80M,flux de donnees genere,49,UDP,5201,UDP_BULK,UDP_BULK,True,84.119,1490.0,2.611

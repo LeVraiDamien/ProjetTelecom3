@@ -1,0 +1,124 @@
+ Container project3-kpm-csv Started
+[1] idle 10s
+[2] dl 5M 25s
+[3] idle 6s
+[4] dl 12M 25s
+[5] idle 6s
+[6] dl 18M 25s
+[7] idle 6s
+Resultats : /home/dguffon/ProjetTelecom3/ScenarioB/experiments/c1-train-01
+ Container project3-kpm-csv Started
+[1] idle 10s
+[2] dl 5M 25s
+[3] idle 6s
+[4] dl 12M 25s
+[5] idle 6s
+[6] dl 18M 25s
+[7] idle 6s
+Resultats : /home/dguffon/ProjetTelecom3/ScenarioB/experiments/c1-train-02
+|--- thp_dl_ma_mbps <= 8.12
+|   |--- class: low
+|--- thp_dl_ma_mbps >  8.12
+|   |--- thp_dl_ma_mbps <= 14.79
+|   |   |--- class: normal
+|   |--- thp_dl_ma_mbps >  14.79
+|   |   |--- class: high
+
+{
+  "version": "dt-v1-c1",
+  "n_train": 118,
+  "n_per_class": {
+    "high": 39,
+    "low": 39,
+    "normal": 40
+  },
+  "train_accuracy": 1.0,
+  "thresholds_mbps": [
+    8.12,
+    14.787
+  ]
+}
+ Container project3-kpm-csv Started
+ Container project3-edge-ai Started
+ Container project3-resource-mgmt Started
+[1] idle 10s
+[2] dl 5M 25s
+[3] idle 6s
+[4] dl 12M 25s
+[5] idle 6s
+[6] dl 18M 25s
+[7] idle 6s
+Resultats : /home/dguffon/ProjetTelecom3/ScenarioB/experiments/c1-eval-01
+ Container project3-kpm-csv Started
+ Container project3-edge-ai Started
+ Container project3-resource-mgmt Started
+[1] idle 10s
+[2] dl 5M 25s
+[3] idle 6s
+[4] dl 12M 25s
+[5] idle 6s
+[6] dl 18M 25s
+[7] idle 6s
+Resultats : /home/dguffon/ProjetTelecom3/ScenarioB/experiments/c1-eval-02
+ Container project3-kpm-csv Started
+ Container project3-edge-ai Started
+ Container project3-resource-mgmt Started
+[1] idle 10s
+[2] dl 5M 25s
+[3] idle 6s
+[4] dl 12M 25s
+[5] idle 6s
+[6] dl 18M 25s
+[7] idle 6s
+Resultats : /home/dguffon/ProjetTelecom3/ScenarioB/experiments/c1-eval-03
+ Container project3-kpm-csv Started
+ Container project3-edge-ai Started
+ Container project3-resource-mgmt Started
+[1] idle 8s
+[2] dl 25M 20s
+[3] idle 6s
+[4] dl 32M 20s
+[5] idle 6s
+[6] dl 40M 20s
+[7] idle 8s
+Resultats : /home/dguffon/ProjetTelecom3/ScenarioB/experiments/c1-saturation
+ Container project3-kpm-csv Started
+ Container project3-edge-ai Started
+ Container project3-resource-mgmt Started
+[1] idle 6s
+[2] dl 5M 12s
+[3] dl 12M 12s
+[4] dl 18M 12s
+[5] dl 32M 12s
+[6] dl 18M 12s
+[7] dl 12M 12s
+[8] dl 5M 12s
+[9] idle 8s
+Resultats : /home/dguffon/ProjetTelecom3/ScenarioB/experiments/c1-ramp
+ Container project3-kpm-csv Started
+ Container project3-edge-ai Started
+ Container project3-resource-mgmt Started
+[1] idle 6s
+[2] ul 1M 15s
+[3] idle 5s
+[4] ul 2M 15s
+[5] idle 5s
+[6] ul 3M 15s
+[7] idle 5s
+[8] ul 5M 15s
+[9] idle 6s
+Resultats : /home/dguffon/ProjetTelecom3/ScenarioB/experiments/c1-uplink-01
+ Container project3-kpm-csv Started
+ Container project3-edge-ai Started
+ Container project3-resource-mgmt Started
+[1] idle 6s
+[2] ul 1M 15s
+[3] idle 5s
+[4] ul 2M 15s
+[5] idle 5s
+[6] ul 3M 15s
+[7] idle 5s
+[8] ul 5M 15s
+[9] idle 6s
+Resultats : /home/dguffon/ProjetTelecom3/ScenarioB/experiments/c1-uplink-02
+CAMPAGNE TERMINEE : c1

@@ -1,0 +1,9 @@
+{
+  "run_id": "calib-dl-01",
+  "plan": "idle:6,dl:5M:12,idle:4,dl:12M:12,idle:4,dl:18M:12,idle:4,dl:25M:12,idle:4,dl:32M:12,idle:4,dl:40M:12,idle:4",
+  "apps": [
+    "kpm"
+  ],
+  "data_endpoint": "10.20.6.30",
+  "traffic": "iperf3 UDP, client cote UE ; -R pour le descendant"
+}

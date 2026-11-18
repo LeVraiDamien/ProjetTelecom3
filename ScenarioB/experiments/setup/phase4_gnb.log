@@ -1,0 +1,20 @@
+
+--== OCUDU gNB (commit e0db566) ==--
+
+Lower PHY in executor sequential baseband mode.
+Available radio types: zmq and realtime_loopback.
+Cell pci=1, bw=10 MHz, 1T1R, dl_arfcn=368500 (n3), dl_freq=1842.5 MHz, dl_ssb_arfcn=368410, ul_freq=1747.5 MHz
+
+N2: Connection to AMF on 10.20.2.12:38412 completed
+==== gNB started ===
+Type <h> to view help
+E2: Connection to Near-RT-RIC on 10.20.11.30:36421 established
+--- /tmp/gnb.log (E2AP)
+2026-11-16T13:45:20.179424 [E2-DU   ] [D] E2 Setup: node component config [0] interface_type=3 req_bytes=178 resp_bytes=52
+2026-11-16T13:45:20.180296 [E2-DU   ] [I] E2AP msg, "successfulOutcome.E2setupResponse", transaction id=0
+2026-11-16T13:45:20.180301 [E2-DU   ] [I] E2 Setup procedure successful.
+2026-11-16T13:46:15.181470 [E2-DU   ] [I] E2AP SDU, "initiatingMessage.RICsubscriptionRequest"
+2026-11-16T13:46:15.181492 [E2-DU   ] [D] "E2AP Subscription Setup Procedure" initialized
+2026-11-16T13:46:15.181492 [E2-DU   ] [I] E2AP: Received subscription request
+2026-11-16T13:46:15.181628 [E2-DU   ] [I] E2AP: Sending subscription response
+2026-11-16T13:46:15.181716 [E2-DU   ] [D] "E2AP Subscription Setup Procedure" finalized

@@ -1,0 +1,12 @@
+OFPST_FLOW reply (OF1.3) (xid=0x2):
+ cookie=0x0, duration=0.207s, table=0, n_packets=2, n_bytes=196, priority=1,in_port=1,dl_src=00:00:00:00:00:03,dl_dst=00:00:00:00:00:01 actions=output:3
+ cookie=0x0, duration=0.196s, table=0, n_packets=1, n_bytes=98, priority=1,in_port=3,dl_src=00:00:00:00:00:01,dl_dst=00:00:00:00:00:03 actions=output:1
+ cookie=0x0, duration=0.179s, table=0, n_packets=1, n_bytes=98, priority=1,in_port=2,dl_src=00:00:00:00:00:04,dl_dst=00:00:00:00:00:01 actions=output:3
+ cookie=0x0, duration=0.166s, table=0, n_packets=0, n_bytes=0, priority=1,in_port=3,dl_src=00:00:00:00:00:01,dl_dst=00:00:00:00:00:04 actions=output:2
+ cookie=0x0, duration=0.141s, table=0, n_packets=2, n_bytes=196, priority=1,in_port=1,dl_src=00:00:00:00:00:03,dl_dst=00:00:00:00:00:02 actions=output:3
+ cookie=0x0, duration=0.129s, table=0, n_packets=1, n_bytes=98, priority=1,in_port=3,dl_src=00:00:00:00:00:02,dl_dst=00:00:00:00:00:03 actions=output:1
+ cookie=0x0, duration=0.112s, table=0, n_packets=1, n_bytes=98, priority=1,in_port=2,dl_src=00:00:00:00:00:04,dl_dst=00:00:00:00:00:02 actions=output:3
+ cookie=0x0, duration=0.100s, table=0, n_packets=0, n_bytes=0, priority=1,in_port=3,dl_src=00:00:00:00:00:02,dl_dst=00:00:00:00:00:04 actions=output:2
+ cookie=0x0, duration=0.061s, table=0, n_packets=1, n_bytes=98, priority=1,in_port=2,dl_src=00:00:00:00:00:04,dl_dst=00:00:00:00:00:03 actions=output:1
+ cookie=0x0, duration=0.056s, table=0, n_packets=0, n_bytes=0, priority=1,in_port=1,dl_src=00:00:00:00:00:03,dl_dst=00:00:00:00:00:04 actions=output:2
+ cookie=0x0, duration=3.994s, table=0, n_packets=31, n_bytes=2270, priority=0 actions=CONTROLLER:65535

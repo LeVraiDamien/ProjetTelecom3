@@ -1,0 +1,14 @@
+run_id,segment,kind,duration_s,start_epoch,end_epoch,ue_connected,direction,offered,sender,receiver,iperf_file,iperf_receiver_mbps,iperf_lost_percent,iperf_jitter_ms
+calib-dl-01,1,idle,6,1794842243.007,1794842249.008,True,none,0,-,-,,,,
+calib-dl-01,2,dl,12,1794842249.008,1794842261.392,True,dl,5M,dn-endpoint 10.20.6.30,UE (ue1),iperf_02_dl_5M.json,5.0,0,0.607
+calib-dl-01,3,idle,4,1794842261.392,1794842266.125,True,none,0,-,-,,,,
+calib-dl-01,4,dl,12,1794842266.125,1794842278.518,True,dl,12M,dn-endpoint 10.20.6.30,UE (ue1),iperf_04_dl_12M.json,12.001,0,0.378
+calib-dl-01,5,idle,4,1794842278.518,1794842282.518,True,none,0,-,-,,,,
+calib-dl-01,6,dl,12,1794842282.518,1794842294.88,True,dl,18M,dn-endpoint 10.20.6.30,UE (ue1),iperf_06_dl_18M.json,18.0,0,0.638
+calib-dl-01,7,idle,4,1794842294.88,1794842299.656,True,none,0,-,-,,,,
+calib-dl-01,8,dl,12,1794842299.656,1794842312.175,True,dl,25M,dn-endpoint 10.20.6.30,UE (ue1),iperf_08_dl_25M.json,25.001,0,0.687
+calib-dl-01,9,idle,4,1794842312.175,1794842316.175,True,none,0,-,-,,,,
+calib-dl-01,10,dl,12,1794842316.175,1794842331.329,True,dl,32M,dn-endpoint 10.20.6.30,UE (ue1),iperf_10_dl_32M.json,24.547,5.788,12.102
+calib-dl-01,11,idle,4,1794842331.329,1794842335.329,True,none,0,-,-,,,,
+calib-dl-01,12,dl,12,1794842335.329,1794842349.676,True,dl,40M,dn-endpoint 10.20.6.30,UE (ue1),iperf_12_dl_40M.json,24.192,21.401,0.417
+calib-dl-01,13,idle,4,1794842349.676,1794842353.677,True,none,0,-,-,,,,

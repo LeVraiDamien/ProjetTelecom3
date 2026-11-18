@@ -1,0 +1,49 @@
+{
+  "version": "dt-v1-c1",
+  "type": "DecisionTreeClassifier(max_depth=2)",
+  "feature": "thp_dl_ma_mbps (moyenne mobile 3 indications de DRB.UEThpDl, Mbit/s)",
+  "labels": {
+    "5M": "low",
+    "12M": "normal",
+    "18M": "high"
+  },
+  "training_runs": [
+    "c1-train-01",
+    "c1-train-02"
+  ],
+  "n_train": 118,
+  "n_per_class": {
+    "high": 39,
+    "low": 39,
+    "normal": 40
+  },
+  "train_accuracy": 1.0,
+  "thresholds_mbps": [
+    8.12,
+    14.787
+  ],
+  "preprocessing": "lignes mapping_status=ok ; transitions exclues (3 s debut, 1 s fin)",
+  "tree": {
+    "feature": "thp_dl_ma_mbps",
+    "threshold": 8.1196,
+    "left": {
+      "leaf": "low",
+      "confidence": 1.0,
+      "n_train": 39
+    },
+    "right": {
+      "feature": "thp_dl_ma_mbps",
+      "threshold": 14.7869,
+      "left": {
+        "leaf": "normal",
+        "confidence": 1.0,
+        "n_train": 40
+      },
+      "right": {
+        "leaf": "high",
+        "confidence": 1.0,
+        "n_train": 39
+      }
+    }
+  }
+}

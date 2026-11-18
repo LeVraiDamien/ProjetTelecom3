@@ -1,0 +1,273 @@
+/usr/local/lib/python3.11/site-packages/os_ken/lib/hub.py:160: EventletDeprecationWarning: 
+Eventlet is deprecated. It is currently being maintained in bugfix mode, and
+we strongly recommend against using it for new projects.
+
+If you are already using Eventlet, we recommend migrating to a different
+framework.  For more detail see
+https://eventlet.readthedocs.io/en/latest/asyncio/migration.html
+
+  import eventlet
+1 RLock(s) were not greened, to fix this error make sure you run eventlet.monkey_patch() before importing any other modules.
+loading app /app/learning_switch.py
+loading app os_ken.controller.ofp_handler
+instantiating app /app/learning_switch.py of ScenarioALearningSwitch
+instantiating app os_ken.controller.ofp_handler of OFPHandler
+BRICK ScenarioALearningSwitch
+  CONSUMES EventOFPPacketIn
+  CONSUMES EventOFPStateChange
+  CONSUMES EventOFPSwitchFeatures
+BRICK ofp_event
+  PROVIDES EventOFPPacketIn TO {'ScenarioALearningSwitch': {'main'}}
+  PROVIDES EventOFPStateChange TO {'ScenarioALearningSwitch': {'dead'}}
+  PROVIDES EventOFPSwitchFeatures TO {'ScenarioALearningSwitch': {'config'}}
+  CONSUMES EventOFPEchoReply
+  CONSUMES EventOFPEchoRequest
+  CONSUMES EventOFPErrorMsg
+  CONSUMES EventOFPHello
+  CONSUMES EventOFPPortDescStatsReply
+  CONSUMES EventOFPPortStatus
+  CONSUMES EventOFPSwitchFeatures
+/usr/local/lib/python3.11/site-packages/os_ken/lib/hub.py:160: EventletDeprecationWarning: 
+Eventlet is deprecated. It is currently being maintained in bugfix mode, and
+we strongly recommend against using it for new projects.
+
+If you are already using Eventlet, we recommend migrating to a different
+framework.  For more detail see
+https://eventlet.readthedocs.io/en/latest/asyncio/migration.html
+
+  import eventlet
+1 RLock(s) were not greened, to fix this error make sure you run eventlet.monkey_patch() before importing any other modules.
+loading app /app/learning_switch.py
+loading app os_ken.controller.ofp_handler
+instantiating app /app/learning_switch.py of ScenarioALearningSwitch
+instantiating app os_ken.controller.ofp_handler of OFPHandler
+BRICK ScenarioALearningSwitch
+  CONSUMES EventOFPPacketIn
+  CONSUMES EventOFPStateChange
+  CONSUMES EventOFPSwitchFeatures
+BRICK ofp_event
+  PROVIDES EventOFPPacketIn TO {'ScenarioALearningSwitch': {'main'}}
+  PROVIDES EventOFPStateChange TO {'ScenarioALearningSwitch': {'dead'}}
+  PROVIDES EventOFPSwitchFeatures TO {'ScenarioALearningSwitch': {'config'}}
+  CONSUMES EventOFPEchoReply
+  CONSUMES EventOFPEchoRequest
+  CONSUMES EventOFPErrorMsg
+  CONSUMES EventOFPHello
+  CONSUMES EventOFPPortDescStatsReply
+  CONSUMES EventOFPPortStatus
+  CONSUMES EventOFPSwitchFeatures
+connected socket:<eventlet.greenio.base.GreenSocket object at 0x7396f23b2a90> address:('127.0.0.1', 40282)
+EVENT ofp_event->ScenarioALearningSwitch EventOFPStateChange
+connected socket:<eventlet.greenio.base.GreenSocket object at 0x7396f23b20d0> address:('127.0.0.1', 40298)
+connected socket:<eventlet.greenio.base.GreenSocket object at 0x7396f23b16d0> address:('127.0.0.1', 40304)
+connected socket:<eventlet.greenio.base.GreenSocket object at 0x7396f23b1dd0> address:('127.0.0.1', 40312)
+hello ev <os_ken.controller.ofp_event.EventOFPHello object at 0x7396f25f9f50>
+move onto config mode
+hello ev <os_ken.controller.ofp_event.EventOFPHello object at 0x7396f25f9610>
+move onto config mode
+hello ev <os_ken.controller.ofp_event.EventOFPHello object at 0x7396f25f9350>
+move onto config mode
+EVENT ofp_event->ScenarioALearningSwitch EventOFPSwitchFeatures
+switch features ev version=0x4,msg_type=0x6,msg_len=0x20,xid=0x21f6ae6e,OFPSwitchFeatures(auxiliary_id=0,capabilities=79,datapath_id=1,n_buffers=0,n_tables=254)
+SWITCH_CONNECTED dpid=0000000000000001 ofp_version=0x04
+FLOW_MOD dpid=0000000000000001 table-miss installed
+EVENT ofp_event->ScenarioALearningSwitch EventOFPSwitchFeatures
+switch features ev version=0x4,msg_type=0x6,msg_len=0x20,xid=0x3e834a2a,OFPSwitchFeatures(auxiliary_id=0,capabilities=79,datapath_id=3,n_buffers=0,n_tables=254)
+EVENT ofp_event->ScenarioALearningSwitch EventOFPSwitchFeatures
+switch features ev version=0x4,msg_type=0x6,msg_len=0x20,xid=0x1e783004,OFPSwitchFeatures(auxiliary_id=0,capabilities=79,datapath_id=2,n_buffers=0,n_tables=254)
+SWITCH_CONNECTED dpid=0000000000000003 ofp_version=0x04
+FLOW_MOD dpid=0000000000000003 table-miss installed
+SWITCH_CONNECTED dpid=0000000000000002 ofp_version=0x04
+FLOW_MOD dpid=0000000000000002 table-miss installed
+move onto main mode
+move onto main mode
+move onto main mode
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+PACKET_IN dpid=0000000000000001 in_port=1 src=00:00:00:00:00:01 dst=ff:ff:ff:ff:ff:ff
+MAC_LEARNED dpid=0000000000000001 mac=00:00:00:00:00:01 port=1
+FLOOD dpid=0000000000000001 dst=ff:ff:ff:ff:ff:ff unknown
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+PACKET_IN dpid=0000000000000002 in_port=1 src=00:00:00:00:00:01 dst=ff:ff:ff:ff:ff:ff
+MAC_LEARNED dpid=0000000000000002 mac=00:00:00:00:00:01 port=1
+FLOOD dpid=0000000000000002 dst=ff:ff:ff:ff:ff:ff unknown
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+PACKET_IN dpid=0000000000000001 in_port=2 src=00:00:00:00:00:02 dst=00:00:00:00:00:01
+MAC_LEARNED dpid=0000000000000001 mac=00:00:00:00:00:02 port=2
+FLOW_MOD dpid=0000000000000001 in_port=2 eth_src=00:00:00:00:00:02 eth_dst=00:00:00:00:00:01 -> output:1
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+PACKET_IN dpid=0000000000000003 in_port=3 src=00:00:00:00:00:01 dst=ff:ff:ff:ff:ff:ff
+MAC_LEARNED dpid=0000000000000003 mac=00:00:00:00:00:01 port=3
+FLOOD dpid=0000000000000003 dst=ff:ff:ff:ff:ff:ff unknown
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+PACKET_IN dpid=0000000000000001 in_port=1 src=00:00:00:00:00:01 dst=00:00:00:00:00:02
+FLOW_MOD dpid=0000000000000001 in_port=1 eth_src=00:00:00:00:00:01 eth_dst=00:00:00:00:00:02 -> output:2
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+PACKET_IN dpid=0000000000000001 in_port=1 src=00:00:00:00:00:01 dst=ff:ff:ff:ff:ff:ff
+FLOOD dpid=0000000000000001 dst=ff:ff:ff:ff:ff:ff unknown
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+PACKET_IN dpid=0000000000000002 in_port=1 src=00:00:00:00:00:01 dst=ff:ff:ff:ff:ff:ff
+FLOOD dpid=0000000000000002 dst=ff:ff:ff:ff:ff:ff unknown
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+PACKET_IN dpid=0000000000000003 in_port=3 src=00:00:00:00:00:01 dst=ff:ff:ff:ff:ff:ff
+FLOOD dpid=0000000000000003 dst=ff:ff:ff:ff:ff:ff unknown
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+PACKET_IN dpid=0000000000000003 in_port=1 src=00:00:00:00:00:03 dst=00:00:00:00:00:01
+MAC_LEARNED dpid=0000000000000003 mac=00:00:00:00:00:03 port=1
+FLOW_MOD dpid=0000000000000003 in_port=1 eth_src=00:00:00:00:00:03 eth_dst=00:00:00:00:00:01 -> output:3
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+PACKET_IN dpid=0000000000000002 in_port=2 src=00:00:00:00:00:03 dst=00:00:00:00:00:01
+MAC_LEARNED dpid=0000000000000002 mac=00:00:00:00:00:03 port=2
+FLOW_MOD dpid=0000000000000002 in_port=2 eth_src=00:00:00:00:00:03 eth_dst=00:00:00:00:00:01 -> output:1
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+PACKET_IN dpid=0000000000000001 in_port=3 src=00:00:00:00:00:03 dst=00:00:00:00:00:01
+MAC_LEARNED dpid=0000000000000001 mac=00:00:00:00:00:03 port=3
+FLOW_MOD dpid=0000000000000001 in_port=3 eth_src=00:00:00:00:00:03 eth_dst=00:00:00:00:00:01 -> output:1
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+PACKET_IN dpid=0000000000000001 in_port=1 src=00:00:00:00:00:01 dst=00:00:00:00:00:03
+FLOW_MOD dpid=0000000000000001 in_port=1 eth_src=00:00:00:00:00:01 eth_dst=00:00:00:00:00:03 -> output:3
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+PACKET_IN dpid=0000000000000002 in_port=1 src=00:00:00:00:00:01 dst=00:00:00:00:00:03
+FLOW_MOD dpid=0000000000000002 in_port=1 eth_src=00:00:00:00:00:01 eth_dst=00:00:00:00:00:03 -> output:2
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+PACKET_IN dpid=0000000000000003 in_port=3 src=00:00:00:00:00:01 dst=00:00:00:00:00:03
+FLOW_MOD dpid=0000000000000003 in_port=3 eth_src=00:00:00:00:00:01 eth_dst=00:00:00:00:00:03 -> output:1
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+PACKET_IN dpid=0000000000000001 in_port=1 src=00:00:00:00:00:01 dst=ff:ff:ff:ff:ff:ff
+FLOOD dpid=0000000000000001 dst=ff:ff:ff:ff:ff:ff unknown
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+PACKET_IN dpid=0000000000000002 in_port=1 src=00:00:00:00:00:01 dst=ff:ff:ff:ff:ff:ff
+FLOOD dpid=0000000000000002 dst=ff:ff:ff:ff:ff:ff unknown
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+PACKET_IN dpid=0000000000000003 in_port=3 src=00:00:00:00:00:01 dst=ff:ff:ff:ff:ff:ff
+FLOOD dpid=0000000000000003 dst=ff:ff:ff:ff:ff:ff unknown
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+PACKET_IN dpid=0000000000000003 in_port=2 src=00:00:00:00:00:04 dst=00:00:00:00:00:01
+MAC_LEARNED dpid=0000000000000003 mac=00:00:00:00:00:04 port=2
+FLOW_MOD dpid=0000000000000003 in_port=2 eth_src=00:00:00:00:00:04 eth_dst=00:00:00:00:00:01 -> output:3
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+PACKET_IN dpid=0000000000000002 in_port=2 src=00:00:00:00:00:04 dst=00:00:00:00:00:01
+MAC_LEARNED dpid=0000000000000002 mac=00:00:00:00:00:04 port=2
+FLOW_MOD dpid=0000000000000002 in_port=2 eth_src=00:00:00:00:00:04 eth_dst=00:00:00:00:00:01 -> output:1
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+PACKET_IN dpid=0000000000000001 in_port=3 src=00:00:00:00:00:04 dst=00:00:00:00:00:01
+MAC_LEARNED dpid=0000000000000001 mac=00:00:00:00:00:04 port=3
+FLOW_MOD dpid=0000000000000001 in_port=3 eth_src=00:00:00:00:00:04 eth_dst=00:00:00:00:00:01 -> output:1
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+PACKET_IN dpid=0000000000000001 in_port=1 src=00:00:00:00:00:01 dst=00:00:00:00:00:04
+FLOW_MOD dpid=0000000000000001 in_port=1 eth_src=00:00:00:00:00:01 eth_dst=00:00:00:00:00:04 -> output:3
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+PACKET_IN dpid=0000000000000002 in_port=1 src=00:00:00:00:00:01 dst=00:00:00:00:00:04
+FLOW_MOD dpid=0000000000000002 in_port=1 eth_src=00:00:00:00:00:01 eth_dst=00:00:00:00:00:04 -> output:2
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+PACKET_IN dpid=0000000000000003 in_port=3 src=00:00:00:00:00:01 dst=00:00:00:00:00:04
+FLOW_MOD dpid=0000000000000003 in_port=3 eth_src=00:00:00:00:00:01 eth_dst=00:00:00:00:00:04 -> output:2
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+PACKET_IN dpid=0000000000000001 in_port=2 src=00:00:00:00:00:02 dst=ff:ff:ff:ff:ff:ff
+FLOOD dpid=0000000000000001 dst=ff:ff:ff:ff:ff:ff unknown
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+PACKET_IN dpid=0000000000000002 in_port=1 src=00:00:00:00:00:02 dst=ff:ff:ff:ff:ff:ff
+MAC_LEARNED dpid=0000000000000002 mac=00:00:00:00:00:02 port=1
+FLOOD dpid=0000000000000002 dst=ff:ff:ff:ff:ff:ff unknown
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+PACKET_IN dpid=0000000000000003 in_port=3 src=00:00:00:00:00:02 dst=ff:ff:ff:ff:ff:ff
+MAC_LEARNED dpid=0000000000000003 mac=00:00:00:00:00:02 port=3
+FLOOD dpid=0000000000000003 dst=ff:ff:ff:ff:ff:ff unknown
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+PACKET_IN dpid=0000000000000003 in_port=1 src=00:00:00:00:00:03 dst=00:00:00:00:00:02
+FLOW_MOD dpid=0000000000000003 in_port=1 eth_src=00:00:00:00:00:03 eth_dst=00:00:00:00:00:02 -> output:3
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+PACKET_IN dpid=0000000000000002 in_port=2 src=00:00:00:00:00:03 dst=00:00:00:00:00:02
+FLOW_MOD dpid=0000000000000002 in_port=2 eth_src=00:00:00:00:00:03 eth_dst=00:00:00:00:00:02 -> output:1
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+PACKET_IN dpid=0000000000000001 in_port=3 src=00:00:00:00:00:03 dst=00:00:00:00:00:02
+FLOW_MOD dpid=0000000000000001 in_port=3 eth_src=00:00:00:00:00:03 eth_dst=00:00:00:00:00:02 -> output:2
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+PACKET_IN dpid=0000000000000001 in_port=2 src=00:00:00:00:00:02 dst=00:00:00:00:00:03
+FLOW_MOD dpid=0000000000000001 in_port=2 eth_src=00:00:00:00:00:02 eth_dst=00:00:00:00:00:03 -> output:3
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+PACKET_IN dpid=0000000000000002 in_port=1 src=00:00:00:00:00:02 dst=00:00:00:00:00:03
+FLOW_MOD dpid=0000000000000002 in_port=1 eth_src=00:00:00:00:00:02 eth_dst=00:00:00:00:00:03 -> output:2
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+PACKET_IN dpid=0000000000000003 in_port=3 src=00:00:00:00:00:02 dst=00:00:00:00:00:03
+FLOW_MOD dpid=0000000000000003 in_port=3 eth_src=00:00:00:00:00:02 eth_dst=00:00:00:00:00:03 -> output:1
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+PACKET_IN dpid=0000000000000001 in_port=2 src=00:00:00:00:00:02 dst=ff:ff:ff:ff:ff:ff
+FLOOD dpid=0000000000000001 dst=ff:ff:ff:ff:ff:ff unknown
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+PACKET_IN dpid=0000000000000002 in_port=1 src=00:00:00:00:00:02 dst=ff:ff:ff:ff:ff:ff
+FLOOD dpid=0000000000000002 dst=ff:ff:ff:ff:ff:ff unknown
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+PACKET_IN dpid=0000000000000003 in_port=3 src=00:00:00:00:00:02 dst=ff:ff:ff:ff:ff:ff
+FLOOD dpid=0000000000000003 dst=ff:ff:ff:ff:ff:ff unknown
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+PACKET_IN dpid=0000000000000003 in_port=2 src=00:00:00:00:00:04 dst=00:00:00:00:00:02
+FLOW_MOD dpid=0000000000000003 in_port=2 eth_src=00:00:00:00:00:04 eth_dst=00:00:00:00:00:02 -> output:3
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+PACKET_IN dpid=0000000000000002 in_port=2 src=00:00:00:00:00:04 dst=00:00:00:00:00:02
+FLOW_MOD dpid=0000000000000002 in_port=2 eth_src=00:00:00:00:00:04 eth_dst=00:00:00:00:00:02 -> output:1
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+PACKET_IN dpid=0000000000000001 in_port=3 src=00:00:00:00:00:04 dst=00:00:00:00:00:02
+FLOW_MOD dpid=0000000000000001 in_port=3 eth_src=00:00:00:00:00:04 eth_dst=00:00:00:00:00:02 -> output:2
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+PACKET_IN dpid=0000000000000001 in_port=2 src=00:00:00:00:00:02 dst=00:00:00:00:00:04
+FLOW_MOD dpid=0000000000000001 in_port=2 eth_src=00:00:00:00:00:02 eth_dst=00:00:00:00:00:04 -> output:3
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+PACKET_IN dpid=0000000000000002 in_port=1 src=00:00:00:00:00:02 dst=00:00:00:00:00:04
+FLOW_MOD dpid=0000000000000002 in_port=1 eth_src=00:00:00:00:00:02 eth_dst=00:00:00:00:00:04 -> output:2
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+PACKET_IN dpid=0000000000000003 in_port=3 src=00:00:00:00:00:02 dst=00:00:00:00:00:04
+FLOW_MOD dpid=0000000000000003 in_port=3 eth_src=00:00:00:00:00:02 eth_dst=00:00:00:00:00:04 -> output:2
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+PACKET_IN dpid=0000000000000003 in_port=1 src=00:00:00:00:00:03 dst=ff:ff:ff:ff:ff:ff
+FLOOD dpid=0000000000000003 dst=ff:ff:ff:ff:ff:ff unknown
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+PACKET_IN dpid=0000000000000002 in_port=2 src=00:00:00:00:00:03 dst=ff:ff:ff:ff:ff:ff
+FLOOD dpid=0000000000000002 dst=ff:ff:ff:ff:ff:ff unknown
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+PACKET_IN dpid=0000000000000003 in_port=2 src=00:00:00:00:00:04 dst=00:00:00:00:00:03
+FLOW_MOD dpid=0000000000000003 in_port=2 eth_src=00:00:00:00:00:04 eth_dst=00:00:00:00:00:03 -> output:1
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+PACKET_IN dpid=0000000000000001 in_port=3 src=00:00:00:00:00:03 dst=ff:ff:ff:ff:ff:ff
+FLOOD dpid=0000000000000001 dst=ff:ff:ff:ff:ff:ff unknown
+EVENT ofp_event->ScenarioALearningSwitch EventOFPPacketIn
+PACKET_IN dpid=0000000000000003 in_port=1 src=00:00:00:00:00:03 dst=00:00:00:00:00:04
+FLOW_MOD dpid=0000000000000003 in_port=1 eth_src=00:00:00:00:00:03 eth_dst=00:00:00:00:00:04 -> output:2

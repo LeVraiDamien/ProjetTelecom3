@@ -1,0 +1,71 @@
+# Scenario B - gNB OCUDU, radio ZeroMQ, agent E2 vers FlexRIC (Phase 4).
+# Lancement : ocudu-gnb -c /config/gnb_zmq.yaml
+
+cu_cp:
+  amf:
+    addrs: 10.20.2.12            # AMF Open5GS sur N2
+    port: 38412
+    bind_addrs: 10.20.2.11       # gNB sur N2
+    supported_tracking_areas:
+      - tac: 1
+        plmn_list:
+          - plmn: "00101"
+            tai_slice_support_list:
+              - sst: 1
+  inactivity_timer: 7200         # ne pas liberer l'UE pendant les longues mesures
+
+cu_up:
+  ngu:
+    socket:
+      - bind_addr: 10.20.3.11    # gNB sur N3 (GTP-U vers l'UPF 10.20.3.14)
+
+ru_sdr:
+  device_driver: zmq
+  # Le gNB emet (bind) sur son adresse RAN:2000 et recoit de l'UE 10.20.11.20:2001.
+  device_args: tx_port=tcp://10.20.11.10:2000,rx_port=tcp://10.20.11.20:2001,base_srate=11.52e6
+  srate: 11.52
+  tx_gain: 0                    # OCUDU impose un gain <= 0 dB avec ZMQ
+  rx_gain: 0
+
+cell_cfg:
+  dl_arfcn: 368500               # bande n3
+  band: 3
+  channel_bandwidth_MHz: 10
+  common_scs: 15
+  plmn: "00101"
+  tac: 1
+  pci: 1
+  pdcch:                         # reglages requis par srsUE
+    common:
+      ss0_index: 0
+      coreset0_index: 6
+    dedicated:
+      ss2_type: common
+      dci_format_0_1_and_1_1: false
+  prach:
+    prach_config_index: 1
+  pdsch:
+    mcs_table: qam64
+  pusch:
+    mcs_table: qam64
+
+e2:
+  enable_du_e2: true             # agent E2 cote DU
+  e2sm_kpm_enabled: true         # E2SM-KPM (mesures)
+  e2sm_rc_enabled: true          # E2SM-RC (controle)
+  addrs: 10.20.11.30             # FlexRIC Near-RT RIC
+  port: 36421
+  bind_addrs: 10.20.11.10
+
+metrics:
+  periodicity:
+    du_report_period: 1000       # ms : periode des mesures du DU (base des rapports KPM)
+  layers:
+    enable_rlc: true
+    enable_sched: true
+    enable_mac: true
+
+log:
+  filename: /tmp/gnb.log
+  all_level: warning
+  e2ap_level: debug              # pour prouver E2 Setup Request/Response

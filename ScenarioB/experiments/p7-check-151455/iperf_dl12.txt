@@ -1,0 +1,20 @@
+Connecting to host 10.20.6.30, port 5201
+Reverse mode, remote host 10.20.6.30 is sending
+[  5] local 10.45.0.2 port 60810 connected to 10.20.6.30 port 5201
+[ ID] Interval           Transfer     Bitrate         Jitter    Lost/Total Datagrams
+[  5]   0.00-1.00   sec  1.43 MBytes  12.0 Mbits/sec  0.216 ms  0/1034 (0%)  
+[  5]   1.00-2.00   sec  1.43 MBytes  12.0 Mbits/sec  0.201 ms  0/1037 (0%)  
+[  5]   2.00-3.00   sec  1.43 MBytes  12.0 Mbits/sec  0.188 ms  0/1036 (0%)  
+[  5]   3.00-4.00   sec  1.43 MBytes  12.0 Mbits/sec  0.244 ms  0/1036 (0%)  
+[  5]   4.00-5.00   sec  1.43 MBytes  12.0 Mbits/sec  0.174 ms  0/1035 (0%)  
+[  5]   5.00-6.00   sec  1.43 MBytes  12.0 Mbits/sec  0.236 ms  0/1038 (0%)  
+[  5]   6.00-7.00   sec  1.43 MBytes  12.0 Mbits/sec  0.248 ms  0/1035 (0%)  
+[  5]   7.00-8.00   sec  1.43 MBytes  12.0 Mbits/sec  0.175 ms  0/1035 (0%)  
+[  5]   8.00-9.00   sec  1.43 MBytes  12.0 Mbits/sec  0.161 ms  0/1037 (0%)  
+[  5]   9.00-10.00  sec  1.43 MBytes  12.0 Mbits/sec  0.260 ms  0/1037 (0%)  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bitrate         Jitter    Lost/Total Datagrams
+[  5]   0.00-10.02  sec  14.3 MBytes  12.0 Mbits/sec  0.000 ms  0/10375 (0%)  sender
+[  5]   0.00-10.00  sec  14.3 MBytes  12.0 Mbits/sec  0.260 ms  0/10360 (0%)  receiver
+
+iperf Done.

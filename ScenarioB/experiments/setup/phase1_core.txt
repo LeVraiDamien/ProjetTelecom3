@@ -1,0 +1,70 @@
+# Phase 1 - coeur 5G en configuration projet 3 (2026-11-16T13:24:50Z)
+gnb1	gradiant/ueransim:3.2.6	Up 51 minutes
+open5gs-and-ueransim-amf-1	gradiant/open5gs:2.7.5	Up 47 seconds
+open5gs-and-ueransim-ausf-1	gradiant/open5gs:2.7.5	Up 51 minutes
+open5gs-and-ueransim-bsf-1	gradiant/open5gs:2.7.5	Up 51 minutes
+open5gs-and-ueransim-mongo-1	mongo	Up 51 minutes
+open5gs-and-ueransim-nrf-1	gradiant/open5gs:2.7.5	Up 51 minutes
+open5gs-and-ueransim-nssf-1	gradiant/open5gs:2.7.5	Up 51 minutes
+open5gs-and-ueransim-pcf-1	gradiant/open5gs:2.7.5	Up 51 minutes
+open5gs-and-ueransim-scp-1	gradiant/open5gs:2.7.5	Up 51 minutes
+open5gs-and-ueransim-smf-1	gradiant/open5gs:2.7.5	Up 46 seconds
+open5gs-and-ueransim-udm-1	gradiant/open5gs:2.7.5	Up 51 minutes
+open5gs-and-ueransim-udr-1	gradiant/open5gs:2.7.5	Up 51 minutes
+open5gs-and-ueransim-ues1-1	telecom-lab-ueransim:3.2.6-p2	Up 51 minutes
+open5gs-and-ueransim-upf-1	gradiant/open5gs:2.7.5	Up 46 seconds
+open5gs-and-ueransim-webui-1	gradiant/open5gs-webui:2.7.5	Up 51 minutes
+project3-dn-endpoint	telecom-lab-srsue:1.0	Up 17 seconds
+project3-flexric	telecom-lab-flexric:1.0	Up 4 minutes
+scenario-a-osken	telecom-lab-osken:1.0	Up 15 minutes
+scenario-b-django	telecom-lab-django:0.1	Up 51 minutes (healthy)
+scenario-b-jenkins	telecom-lab-jenkins:2.580.1-jdk21	Up 51 minutes (healthy)
+scenario-b-nginx	telecom-lab-nginx:p2	Up 51 minutes
+n2-net 10.20.2.0/24 :: open5gs-and-ueransim-amf-1=10.20.2.12/24 
+n3-net 10.20.3.0/24 :: open5gs-and-ueransim-upf-1=10.20.3.14/24 
+n4-net 10.20.5.0/24 :: open5gs-and-ueransim-smf-1=10.20.5.13/24 open5gs-and-ueransim-upf-1=10.20.5.14/24 
+dn-net 10.20.6.0/24 :: project3-dn-endpoint=10.20.6.30/24 open5gs-and-ueransim-upf-1=10.20.6.10/24 scenario-b-nginx=10.20.6.20/24 
+project3-ric-lab_ran-net 10.20.11.0/24 :: project3-flexric=10.20.11.30/24 
+== amf
+lo               UNKNOWN        127.0.0.1/8 ::1/128 
+n2@if199         UP             10.20.2.12/24 
+eth0@if200       UP             172.18.0.7/16 
+11/16 13:24:04.592: [amf] INFO: ngap_server() [172.18.0.7]:38412 (../src/amf/ngap-sctp.c:61)
+11/16 13:24:04.592: [amf] INFO: ngap_server() [10.20.2.12]:38412 (../src/amf/ngap-sctp.c:61)
+== smf
+lo               UNKNOWN        127.0.0.1/8 ::1/128 
+n4@if205         UP             10.20.5.13/24 
+eth0@if206       UP             172.18.0.16/16 
+11/16 13:24:05.112: [gtp] INFO: gtp_server() [172.18.0.16]:2123 (../lib/gtp/path.c:30)
+11/16 13:24:05.112: [gtp] INFO: gtp_server() [172.18.0.16]:2152 (../lib/gtp/path.c:30)
+11/16 13:24:05.112: [pfcp] INFO: pfcp_server() [10.20.5.13]:8805 (../lib/pfcp/path.c:30)
+11/16 13:24:16.115: [smf] INFO: PFCP associated [10.20.5.14]:8805 (../src/smf/pfcp-sm.c:188)
+== upf
+lo               UNKNOWN        127.0.0.1/8 ::1/128 
+eth0@if201       UP             172.18.0.10/16 fe80::90b0:66ff:feca:ab01/64 
+n6@if202         UP             10.20.6.10/24 fe80::802f:2fff:fed2:2f75/64 
+n3@if203         UP             10.20.3.14/24 fe80::a846:62ff:fe4d:e3c1/64 
+n4@if204         UP             10.20.5.14/24 fe80::5836:b5ff:fe27:baf5/64 
+ogstun           UP             10.45.0.1/16 cafe::1/64 fe80::3cc3:69aa:4c09:b8fd/64 
+11/16 13:24:14.988: [pfcp] INFO: pfcp_server() [10.20.5.14]:8805 (../lib/pfcp/path.c:30)
+11/16 13:24:14.988: [gtp] INFO: gtp_server() [10.20.3.14]:2152 (../lib/gtp/path.c:30)
+11/16 13:24:16.115: [upf] INFO: PFCP associated [10.20.5.13]:8805 (../src/upf/pfcp-sm.c:168)
+== abonne srsUE
+  },
+  {
+    imsi: '001010123456780',
+    slice: [
+      { session: [ { name: 'internet' } ] }
+    ],
+    security: {
+      k: '00112233445566778899aabbccddeeff',
+      opc: '63BFA50EE6523365FF14C1F45F88737D'
+    }
+  }
+== point de donnees
+lo               UNKNOWN        127.0.0.1/8 ::1/128 
+eth0@if213       UP             10.20.6.30/24 
+default via 10.20.6.1 dev eth0 
+10.20.6.0/24 dev eth0 proto kernel scope link src 10.20.6.30 
+10.45.0.0/16 via 10.20.6.10 dev eth0 
+LISTEN 0      4096               *:5201             *:*          

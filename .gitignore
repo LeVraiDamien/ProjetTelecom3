@@ -1,0 +1,15 @@
+# Local : Claude, sujet et notes du prof (comme aux projets 1 et 2)
+CLAUDE.md
+CLAUDE.local.md
+.claude/
+/docs/
+*:Zone.Identifier
+# Python
+__pycache__/
+*.pyc
+.venv/
+# Secrets
+.env
+
+# Journaux de compilation du scenario B
+ScenarioB/images/build-logs/

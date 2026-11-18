@@ -1,0 +1,78 @@
+Active RF plugins: libsrsran_rf_zmq.so
+Inactive RF plugins: 
+Reading configuration file /config/ue_zmq.conf...
+
+Built in Release mode using commit a5ed6e7 on branch HEAD.
+
+Opening 1 channels in RF device=zmq with args=tx_port=tcp://10.20.11.20:2001,rx_port=tcp://10.20.11.10:2000,base_srate=11.52e6
+Supported RF device list: zmq file
+CHx base_srate=11.52e6
+Current sample rate is 1.92 MHz with a base rate of 11.52 MHz (x6 decimation)
+CH0 rx_port=tcp://10.20.11.10:2000
+CH0 tx_port=tcp://10.20.11.20:2001
+Current sample rate is 11.52 MHz with a base rate of 11.52 MHz (x1 decimation)
+Current sample rate is 11.52 MHz with a base rate of 11.52 MHz (x1 decimation)
+Waiting PHY to initialize ... done!
+Attaching UE...
+Closing stdin thread.
+Random Access Transmission: prach_occasion=0, preamble_index=0, ra-rnti=0x39, tti=2414
+Random Access Complete.     c-rnti=0x4601, ta=0
+RRC Connected
+PDU Session Establishment successful. IP: 10.45.0.2
+RRC NR reconfiguration successful.
+--- namespace ue1
+lo               DOWN           
+tun_srsue        UNKNOWN        10.45.0.2/24 
+default via 10.45.0.1 dev tun_srsue 
+10.45.0.0/24 dev tun_srsue proto kernel scope link src 10.45.0.2 
+--- ping passerelle PDU
+PING 10.45.0.1 (10.45.0.1) 56(84) bytes of data.
+64 bytes from 10.45.0.1: icmp_seq=1 ttl=64 time=27.0 ms
+64 bytes from 10.45.0.1: icmp_seq=2 ttl=64 time=34.2 ms
+64 bytes from 10.45.0.1: icmp_seq=3 ttl=64 time=27.6 ms
+64 bytes from 10.45.0.1: icmp_seq=4 ttl=64 time=32.4 ms
+
+--- 10.45.0.1 ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3003ms
+rtt min/avg/max/mdev = 27.004/30.298/34.197/3.072 ms
+--- ping point de donnees
+PING 10.20.6.30 (10.20.6.30) 56(84) bytes of data.
+64 bytes from 10.20.6.30: icmp_seq=1 ttl=63 time=40.2 ms
+64 bytes from 10.20.6.30: icmp_seq=2 ttl=63 time=20.4 ms
+64 bytes from 10.20.6.30: icmp_seq=3 ttl=63 time=31.5 ms
+64 bytes from 10.20.6.30: icmp_seq=4 ttl=63 time=29.0 ms
+
+--- 10.20.6.30 ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3005ms
+rtt min/avg/max/mdev = 20.406/30.273/40.182/7.044 ms
+--- montant UE->DN (UDP 5M)
+Connecting to host 10.20.6.30, port 5201
+[  5] local 10.45.0.2 port 49671 connected to 10.20.6.30 port 5201
+[ ID] Interval           Transfer     Bitrate         Total Datagrams
+[  5]   0.00-1.00   sec   611 KBytes  5.00 Mbits/sec  432  
+[  5]   1.00-2.00   sec   609 KBytes  4.99 Mbits/sec  431  
+[  5]   2.00-3.00   sec   611 KBytes  5.00 Mbits/sec  432  
+[  5]   3.00-4.00   sec   611 KBytes  5.00 Mbits/sec  432  
+[  5]   4.00-5.00   sec   609 KBytes  4.99 Mbits/sec  431  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bitrate         Jitter    Lost/Total Datagrams
+[  5]   0.00-5.00   sec  2.98 MBytes  5.00 Mbits/sec  0.000 ms  0/2158 (0%)  sender
+[  5]   0.00-5.56   sec  2.78 MBytes  4.19 Mbits/sec  0.886 ms  148/2158 (6.9%)  receiver
+
+iperf Done.
+--- descendant DN->UE (UDP 5M, -R)
+Connecting to host 10.20.6.30, port 5201
+Reverse mode, remote host 10.20.6.30 is sending
+[  5] local 10.45.0.2 port 40002 connected to 10.20.6.30 port 5201
+[ ID] Interval           Transfer     Bitrate         Jitter    Lost/Total Datagrams
+[  5]   0.00-1.00   sec   615 KBytes  5.03 Mbits/sec  0.629 ms  0/435 (0%)  
+[  5]   1.00-2.00   sec   609 KBytes  4.99 Mbits/sec  0.812 ms  0/431 (0%)  
+[  5]   2.00-3.00   sec   611 KBytes  5.00 Mbits/sec  1.004 ms  0/432 (0%)  
+[  5]   3.00-4.00   sec   611 KBytes  5.00 Mbits/sec  0.912 ms  0/432 (0%)  
+[  5]   4.00-5.00   sec   609 KBytes  4.99 Mbits/sec  0.790 ms  0/431 (0%)  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bitrate         Jitter    Lost/Total Datagrams
+[  5]   0.00-5.02   sec  2.99 MBytes  5.00 Mbits/sec  0.000 ms  0/2166 (0%)  sender
+[  5]   0.00-5.00   sec  2.98 MBytes  5.01 Mbits/sec  0.790 ms  0/2161 (0%)  receiver
+
+iperf Done.

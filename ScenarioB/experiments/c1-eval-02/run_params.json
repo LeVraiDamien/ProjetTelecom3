@@ -1,0 +1,11 @@
+{
+  "run_id": "c1-eval-02",
+  "plan": "idle:10,dl:5M:25,idle:6,dl:12M:25,idle:6,dl:18M:25,idle:6",
+  "apps": [
+    "kpm",
+    "ai",
+    "rm"
+  ],
+  "data_endpoint": "10.20.6.30",
+  "traffic": "iperf3 UDP, client cote UE ; -R pour le descendant"
+}

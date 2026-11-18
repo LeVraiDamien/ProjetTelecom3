@@ -1,0 +1,193 @@
+# Projet 3, scenario B : reseaux N2/N3/N4/RAN a adresses fixes + RAN O-RAN.
+# Surcharge du coeur Open5GS existant (ngc.yaml) ; a lancer via ../p3-compose.sh.
+#
+# Ecart assume avec le sujet : le coeur du Projet 2 vivait sur un seul reseau a
+# adresses dynamiques. On ajoute N2, N3 et N4 a adresses fixes ; le SBI reste sur
+# le reseau d'origine (open5gs-and-ueransim_default).
+
+services:
+  nrf:
+    volumes:
+      - ${P3_DIR}/config/core/nrf.yaml:/opt/open5gs/etc/open5gs/nrf.yaml:ro
+
+  amf:
+    volumes:
+      - ${P3_DIR}/config/core/amf.yaml:/opt/open5gs/etc/open5gs/amf.yaml:ro
+    networks:
+      default:
+        interface_name: eth0
+        gw_priority: 1
+      n2-net:
+        interface_name: n2
+        ipv4_address: 10.20.2.12
+
+  smf:
+    volumes:
+      - ${P3_DIR}/config/core/smf.yaml:/opt/open5gs/etc/open5gs/smf.yaml:ro
+    networks:
+      default:
+        interface_name: eth0
+        gw_priority: 1
+      n4-net:
+        interface_name: n4
+        ipv4_address: 10.20.5.13
+
+  upf:
+    volumes:
+      - ${P3_DIR}/config/core/upf.yaml:/opt/open5gs/etc/open5gs/upf.yaml:ro
+    networks:
+      default:
+        interface_name: eth0
+        gw_priority: 1
+      dn-net:
+        interface_name: n6
+        ipv4_address: 10.20.6.10
+      n3-net:
+        interface_name: n3
+        ipv4_address: 10.20.3.14
+      n4-net:
+        interface_name: n4
+        ipv4_address: 10.20.5.14
+
+  # Point de terminaison du reseau de donnees pour les mesures : serveur iperf3.
+  # (10.20.6.20 est deja le Nginx du Projet 2 ; on prend 10.20.6.30.)
+  p3-dn-endpoint:
+    image: telecom-lab-srsue:1.0          # reutilisee pour ses outils (iperf3, iproute2)
+    container_name: project3-dn-endpoint
+    cap_add: [NET_ADMIN]
+    # Pas de NAT sur N6 : route de retour vers le pool des UE via l'UPF.
+    command: ["sh", "-c", "ip route replace 10.45.0.0/16 via 10.20.6.10 && exec iperf3 -s"]
+    networks:
+      dn-net:
+        ipv4_address: 10.20.6.30
+
+  p3-flexric:
+    image: telecom-lab-flexric:1.0
+    container_name: project3-flexric
+    volumes:
+      - ${P3_DIR}/config:/config:ro
+    # stdbuf -oL : sans terminal, la libc mettrait le journal du RIC en tampon.
+    command: ["stdbuf", "-oL", "-eL", "/flexric/build/examples/ric/nearRT-RIC", "-c", "/config/ric.conf"]
+    networks:
+      ran-net:
+        ipv4_address: 10.20.11.30
+
+  p3-gnb:
+    image: telecom-lab-ocudu-gnb:1.0
+    container_name: project3-ocudu-gnb
+    cap_add: [SYS_NICE, NET_ADMIN]
+    volumes:
+      - ${P3_DIR}/config:/config:ro
+    command: ["stdbuf", "-oL", "-eL", "ocudu-gnb", "-c", "/config/gnb_zmq.yaml"]
+    networks:
+      ran-net:
+        interface_name: ran
+        ipv4_address: 10.20.11.10
+      n2-net:
+        interface_name: n2
+        ipv4_address: 10.20.2.11
+      n3-net:
+        interface_name: n3
+        ipv4_address: 10.20.3.11
+
+  p3-srsue:
+    image: telecom-lab-srsue:1.0
+    container_name: project3-srsue
+    privileged: true                      # creation du namespace ue1 et de tun_srsue
+    volumes:
+      - ${P3_DIR}/config:/config:ro
+    # netns recree a chaque demarrage (un fichier /run/netns/ue1 perime bloque srsUE)
+    command: ["sh", "-c", "ip netns del ue1 2>/dev/null; ip netns add ue1 && exec stdbuf -oL -eL srsue /config/ue_zmq.conf"]
+    networks:
+      ran-net:
+        ipv4_address: 10.20.11.20
+
+  # xApp KPM de reference (Phase 6) ; lancee a la demande : --profile xapp
+  p3-kpm-xapp:
+    profiles: [xapp]
+    image: telecom-lab-flexric:1.0
+    container_name: project3-kpm-xapp
+    volumes:
+      - ${P3_DIR}/config:/config:ro
+    command: ["stdbuf", "-oL", "-eL", "/flexric/build/examples/xApp/c/monitor/xapp_oran_moni", "-c", "/config/xapp_oran_moni.conf"]
+    networks:
+      ran-net:
+        ipv4_address: 10.20.11.31
+
+  # xApp KPM etendue (Phase 7) : 5 mesures -> un CSV par run dans ${P3_RUN_DIR}
+  p3-kpm-csv:
+    profiles: [xapp]
+    image: telecom-lab-flexric-xapps:1.0
+    build:
+      context: ${P3_DIR}
+      dockerfile: images/flexric-xapps/Dockerfile
+    container_name: project3-kpm-csv
+    user: "${P3_UID}:${P3_GID}"           # fichiers du run appartenant a l'utilisateur, pas a root
+    stop_grace_period: 15s                # laisse le temps de se desabonner proprement
+    environment:
+      RUN_ID: ${P3_RUN_ID:-manual}
+      KPM_CSV: /data/kpm.csv
+    volumes:
+      - ${P3_DIR}/config:/config:ro
+      - ${P3_RUN_DIR:-/tmp/p3-run}:/data
+    command: ["stdbuf", "-oL", "-eL", "xapp_kpm_csv", "-c", "/config/xapp_kpm_ext.conf"]
+    networks:
+      ran-net:
+        ipv4_address: 10.20.11.32
+
+  # xApp Edge-AI (Phase 8) : lit kpm.csv, ecrit edge_ai.csv dans le repertoire du run
+  p3-edge-ai:
+    profiles: [xapp]
+    image: telecom-lab-p3-ai:1.0
+    build:
+      context: ${P3_DIR}/xapps
+    container_name: project3-edge-ai
+    user: "${P3_UID}:${P3_GID}"
+    stop_grace_period: 15s
+    volumes:
+      - ${P3_RUN_DIR:-/tmp/p3-run}:/data
+      - ${P3_DIR}/xapps/edge_ai/model:/model:ro
+    command: ["python", "/app/edge_ai/edge_ai.py"]
+    networks:
+      ran-net:
+        ipv4_address: 10.20.11.33
+
+  # xApp de gestion des ressources (Phase 9), DRY_RUN : lit edge_ai.csv, ecrit rm_decisions.csv
+  p3-resource-mgmt:
+    profiles: [xapp]
+    image: telecom-lab-p3-ai:1.0
+    container_name: project3-resource-mgmt
+    user: "${P3_UID}:${P3_GID}"
+    stop_grace_period: 20s
+    volumes:
+      - ${P3_RUN_DIR:-/tmp/p3-run}:/data
+    command: ["python", "/app/resource_mgmt/resource_mgmt.py"]
+    networks:
+      ran-net:
+        ipv4_address: 10.20.11.34
+
+networks:
+  n2-net:
+    name: n2-net
+    ipam:
+      config:
+        - subnet: 10.20.2.0/24
+          gateway: 10.20.2.1
+  n3-net:
+    name: n3-net
+    ipam:
+      config:
+        - subnet: 10.20.3.0/24
+          gateway: 10.20.3.1
+  n4-net:
+    name: n4-net
+    ipam:
+      config:
+        - subnet: 10.20.5.0/24
+          gateway: 10.20.5.1
+  ran-net:
+    name: project3-ric-lab_ran-net
+    ipam:
+      config:
+        - subnet: 10.20.11.0/24
+          gateway: 10.20.11.1

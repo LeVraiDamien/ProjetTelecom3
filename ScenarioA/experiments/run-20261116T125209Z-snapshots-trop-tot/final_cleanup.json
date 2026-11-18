@@ -1,0 +1,5 @@
+{
+  "ovs_bridges": [],
+  "mininet_links": [],
+  "mininet_processes": "34746 bash --norc --noediting -is mininet:c0\n"
+}

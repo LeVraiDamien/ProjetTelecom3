@@ -1,0 +1,19 @@
+{
+  "client": "h1 10.0.0.1",
+  "server": "h4 10.0.0.4",
+  "port": 5201,
+  "duration_s": 10,
+  "link": {
+    "bw": 100,
+    "delay": "1ms",
+    "loss": 0,
+    "max_queue_size": 1000,
+    "use_tbf": true
+  },
+  "tests": {
+    "tcp": "iperf3 -c 10.0.0.4 -p 5201 -t 10 -J --get-server-output ",
+    "udp_50M": "iperf3 -c 10.0.0.4 -p 5201 -t 10 -J --get-server-output -u -b 50M",
+    "udp_80M": "iperf3 -c 10.0.0.4 -p 5201 -t 10 -J --get-server-output -u -b 80M",
+    "udp_100M": "iperf3 -c 10.0.0.4 -p 5201 -t 10 -J --get-server-output -u -b 100M"
+  }
+}

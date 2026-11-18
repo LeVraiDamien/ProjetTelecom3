@@ -1,0 +1,58 @@
+$ lsb_release -ds
+Ubuntu 24.04.2 LTS
+
+$ uname -r
+6.18.58.1-microsoft-standard-WSL2
+
+$ mn --version
+2.3.0
+
+$ ovs-vsctl --version
+ovs-vsctl (Open vSwitch) 3.3.9
+DB Schema 8.5.1
+
+$ docker --version
+Docker version 29.8.1, build 4a63305
+
+$ python3 --version
+Python 3.12.3
+
+$ iperf3 --version
+iperf 3.16 (cJSON 1.7.15)
+Linux DamienPcPort 6.18.58.1-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Tue Oct 27 00:24:11 UTC 2026 x86_64
+Optional features available: CPU affinity setting, IPv6 flow label, SCTP, TCP congestion algorithm setting, sendfile / zerocopy, socket pacing, authentication, bind to device, support IPv4 don't fragment, POSIX threads
+
+$ tcpdump --version
+tcpdump version 4.99.4
+libpcap version 1.10.4 (with TPACKET_V3)
+OpenSSL 3.0.13 30 Jan 2024
+
+$ systemctl is-active openvswitch-switch
+active
+
+$ nproc
+20
+
+$ free -h
+               total        used        free      shared  buff/cache   available
+Mem:           7.6Gi       2.3Gi       1.7Gi       5.8Mi       3.7Gi       5.2Gi
+Swap:          2.0Gi          0B       2.0Gi
+
+$ docker image inspect telecom-lab-osken:1.0 --format '{{.Id}}'
+sha256:1d1355a4c020589c7f83ccbe1a765c90f4d1534b90bb2209ee645ff8e5a3b5a4
+
+$ docker exec scenario-a-osken pip show os-ken
+Name: os-ken
+Version: 3.1.1
+Summary: A component-based software defined networking framework for OpenStack.
+Home-page: http://www.openstack.org/
+Author: OpenStack
+Author-email: openstack-discuss@lists.openstack.org
+License: 
+Location: /usr/local/lib/python3.11/site-packages
+Requires: eventlet, msgpack, ncclient, netaddr, oslo.config, ovs, packaging, pbr, Routes, WebOb
+Required-by: 
+
+$ docker exec scenario-a-osken python --version
+Python 3.11.5
+

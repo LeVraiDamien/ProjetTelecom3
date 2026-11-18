@@ -1,0 +1,9 @@
+tun_srsue        UNKNOWN        10.45.0.2/24 
+PING 10.20.6.30 (10.20.6.30) 56(84) bytes of data.
+64 bytes from 10.20.6.30: icmp_seq=1 ttl=63 time=24.7 ms
+64 bytes from 10.20.6.30: icmp_seq=2 ttl=63 time=21.5 ms
+64 bytes from 10.20.6.30: icmp_seq=3 ttl=63 time=39.4 ms
+
+--- 10.20.6.30 ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2031ms
+rtt min/avg/max/mdev = 21.526/28.564/39.435/7.797 ms

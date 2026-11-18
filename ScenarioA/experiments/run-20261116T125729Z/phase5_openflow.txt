@@ -1,0 +1,115 @@
+$ ovs-vsctl get bridge s1 protocols fail_mode other-config:datapath-id
+[OpenFlow13]
+secure
+"0000000000000001"
+
+$ ovs-vsctl get-controller s1
+tcp:127.0.0.1:6633
+
+$ ovs-vsctl --columns=target,is_connected,role,status list controller s1
+target              : "tcp:127.0.0.1:6633"
+is_connected        : true
+role                : other
+status              : {sec_since_connect="3", state=ACTIVE}
+
+$ ovs-ofctl -O OpenFlow13 show s1
+OFPT_FEATURES_REPLY (OF1.3) (xid=0x2): dpid:0000000000000001
+n_tables:254, n_buffers:0
+capabilities: FLOW_STATS TABLE_STATS PORT_STATS GROUP_STATS QUEUE_STATS
+OFPST_PORT_DESC reply (OF1.3) (xid=0x3):
+ 1(s1-eth1): addr:fe:34:54:c8:e5:1c
+     config:     0
+     state:      LIVE
+     current:    10GB-FD COPPER
+     speed: 10000 Mbps now, 0 Mbps max
+ 2(s1-eth2): addr:72:ea:c9:89:cc:fa
+     config:     0
+     state:      LIVE
+     current:    10GB-FD COPPER
+     speed: 10000 Mbps now, 0 Mbps max
+ 3(s1-eth3): addr:9a:5c:b0:e3:09:3c
+     config:     0
+     state:      LIVE
+     current:    10GB-FD COPPER
+     speed: 10000 Mbps now, 0 Mbps max
+ LOCAL(s1): addr:ea:5c:94:ad:61:46
+     config:     PORT_DOWN
+     state:      LINK_DOWN
+     speed: 0 Mbps now, 0 Mbps max
+OFPT_GET_CONFIG_REPLY (OF1.3) (xid=0x5): frags=normal miss_send_len=0
+
+$ ovs-vsctl get bridge s2 protocols fail_mode other-config:datapath-id
+[OpenFlow13]
+secure
+"0000000000000002"
+
+$ ovs-vsctl get-controller s2
+tcp:127.0.0.1:6633
+
+$ ovs-vsctl --columns=target,is_connected,role,status list controller s2
+target              : "tcp:127.0.0.1:6633"
+is_connected        : true
+role                : other
+status              : {sec_since_connect="3", state=ACTIVE}
+
+$ ovs-ofctl -O OpenFlow13 show s2
+OFPT_FEATURES_REPLY (OF1.3) (xid=0x2): dpid:0000000000000002
+n_tables:254, n_buffers:0
+capabilities: FLOW_STATS TABLE_STATS PORT_STATS GROUP_STATS QUEUE_STATS
+OFPST_PORT_DESC reply (OF1.3) (xid=0x3):
+ 1(s2-eth1): addr:36:fb:22:2e:94:d2
+     config:     0
+     state:      LIVE
+     current:    10GB-FD COPPER
+     speed: 10000 Mbps now, 0 Mbps max
+ 2(s2-eth2): addr:26:37:56:29:e1:93
+     config:     0
+     state:      LIVE
+     current:    10GB-FD COPPER
+     speed: 10000 Mbps now, 0 Mbps max
+ LOCAL(s2): addr:5a:d8:f9:53:22:43
+     config:     PORT_DOWN
+     state:      LINK_DOWN
+     speed: 0 Mbps now, 0 Mbps max
+OFPT_GET_CONFIG_REPLY (OF1.3) (xid=0x5): frags=normal miss_send_len=0
+
+$ ovs-vsctl get bridge s3 protocols fail_mode other-config:datapath-id
+[OpenFlow13]
+secure
+"0000000000000003"
+
+$ ovs-vsctl get-controller s3
+tcp:127.0.0.1:6633
+
+$ ovs-vsctl --columns=target,is_connected,role,status list controller s3
+target              : "tcp:127.0.0.1:6633"
+is_connected        : true
+role                : other
+status              : {sec_since_connect="3", state=ACTIVE}
+
+$ ovs-ofctl -O OpenFlow13 show s3
+OFPT_FEATURES_REPLY (OF1.3) (xid=0x2): dpid:0000000000000003
+n_tables:254, n_buffers:0
+capabilities: FLOW_STATS TABLE_STATS PORT_STATS GROUP_STATS QUEUE_STATS
+OFPST_PORT_DESC reply (OF1.3) (xid=0x3):
+ 1(s3-eth1): addr:c6:1f:b9:a0:a1:1a
+     config:     0
+     state:      LIVE
+     current:    10GB-FD COPPER
+     speed: 10000 Mbps now, 0 Mbps max
+ 2(s3-eth2): addr:ee:df:56:7e:2e:43
+     config:     0
+     state:      LIVE
+     current:    10GB-FD COPPER
+     speed: 10000 Mbps now, 0 Mbps max
+ 3(s3-eth3): addr:26:63:0a:43:37:20
+     config:     0
+     state:      LIVE
+     current:    10GB-FD COPPER
+     speed: 10000 Mbps now, 0 Mbps max
+ LOCAL(s3): addr:aa:2b:2c:c6:84:4b
+     config:     PORT_DOWN
+     state:      LINK_DOWN
+     speed: 0 Mbps now, 0 Mbps max
+OFPT_GET_CONFIG_REPLY (OF1.3) (xid=0x5): frags=normal miss_send_len=0
+

@@ -1,0 +1,8 @@
+run_id,segment,kind,duration_s,start_epoch,end_epoch,ue_connected,direction,offered,sender,receiver,iperf_file,iperf_receiver_mbps,iperf_lost_percent,iperf_jitter_ms
+c1-saturation,1,idle,8,1794843254.698,1794843263.599,True,none,0,-,-,,,,
+c1-saturation,2,dl,20,1794843263.599,1794843284.026,True,dl,25M,dn-endpoint 10.20.6.30,UE (ue1),iperf_02_dl_25M.json,25.0,0,0.672
+c1-saturation,3,idle,6,1794843284.026,1794843290.026,True,none,0,-,-,,,,
+c1-saturation,4,dl,20,1794843290.026,1794843313.876,True,dl,32M,dn-endpoint 10.20.6.30,UE (ue1),iperf_04_dl_32M.json,25.547,11.734,0.382
+c1-saturation,5,idle,6,1794843313.876,1794843319.876,True,none,0,-,-,,,,
+c1-saturation,6,dl,20,1794843319.876,1794843343.169,True,dl,40M,dn-endpoint 10.20.6.30,UE (ue1),iperf_06_dl_40M.json,24.688,28.597,0.374
+c1-saturation,7,idle,8,1794843343.169,1794843351.169,True,none,0,-,-,,,,

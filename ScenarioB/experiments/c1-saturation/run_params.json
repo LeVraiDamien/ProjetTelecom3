@@ -1,0 +1,11 @@
+{
+  "run_id": "c1-saturation",
+  "plan": "idle:8,dl:25M:20,idle:6,dl:32M:20,idle:6,dl:40M:20,idle:8",
+  "apps": [
+    "kpm",
+    "ai",
+    "rm"
+  ],
+  "data_endpoint": "10.20.6.30",
+  "traffic": "iperf3 UDP, client cote UE ; -R pour le descendant"
+}

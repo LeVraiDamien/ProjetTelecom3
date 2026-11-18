@@ -1,0 +1,83 @@
+
+=== Phase 1 : environnement ===
+
+=== Phase 2 : baseline Mininet + OVS sans controleur ===
+*** Creating network
+*** Adding hosts:
+h1 h2 
+*** Adding switches:
+s1 
+*** Adding links:
+(h1, s1) (h2, s1) 
+*** Configuring hosts
+h1 h2 
+*** Starting controller
+
+*** Starting 1 switches
+s1 ...
+*** Ping: testing ping reachability
+h1 -> h2 
+h2 -> h1 
+*** Results: 0% dropped (2/2 received)
+*** Stopping 0 controllers
+
+*** Stopping 2 links
+..
+*** Stopping 1 switches
+s1 
+*** Stopping 2 hosts
+h1 h2 
+*** Done
+*** Creating network
+*** Adding hosts:
+h1 h2 h3 h4 
+*** Adding switches:
+s1 s2 s3 
+*** Adding links:
+(100.00Mbit 1ms delay 0.00000% loss) (100.00Mbit 1ms delay 0.00000% loss) (h1, s1) (100.00Mbit 1ms delay 0.00000% loss) (100.00Mbit 1ms delay 0.00000% loss) (h2, s1) (100.00Mbit 1ms delay 0.00000% loss) (100.00Mbit 1ms delay 0.00000% loss) (h3, s3) (100.00Mbit 1ms delay 0.00000% loss) (100.00Mbit 1ms delay 0.00000% loss) (h4, s3) (100.00Mbit 1ms delay 0.00000% loss) (100.00Mbit 1ms delay 0.00000% loss) (s1, s2) (100.00Mbit 1ms delay 0.00000% loss) (100.00Mbit 1ms delay 0.00000% loss) (s2, s3) 
+*** Configuring hosts
+h1 h2 h3 h4 
+*** Starting controller
+c0 
+*** Starting 3 switches
+s1 s2 s3 ...(100.00Mbit 1ms delay 0.00000% loss) (100.00Mbit 1ms delay 0.00000% loss) (100.00Mbit 1ms delay 0.00000% loss) (100.00Mbit 1ms delay 0.00000% loss) (100.00Mbit 1ms delay 0.00000% loss) (100.00Mbit 1ms delay 0.00000% loss) (100.00Mbit 1ms delay 0.00000% loss) (100.00Mbit 1ms delay 0.00000% loss) 
+*** Waiting for switches to connect
+s1 s2 s3 
+
+=== Phase 3 : topologie et qdiscs ===
+
+=== Phase 5 : OpenFlow 1.3, fail-mode secure, sessions ===
+
+=== Phase 6 : learning switch ===
+*** Ping: testing ping reachability
+h1 -> h2 h3 h4 
+h2 -> h1 h3 h4 
+h3 -> h1 h2 h4 
+h4 -> h1 h2 h3 
+*** Results: 0% dropped (12/12 received)
+OK   s1 attendu output:3
+    cookie=0x0, duration=2.226s, table=0, n_packets=3, n_bytes=294, priority=1,in_port=1,dl_src=00:00:00:00:00:01,dl_dst=00:00:00:00:00:04 actions=output:3
+OK   s2 attendu output:2
+    cookie=0x0, duration=2.227s, table=0, n_packets=3, n_bytes=294, priority=1,in_port=1,dl_src=00:00:00:00:00:01,dl_dst=00:00:00:00:00:04 actions=output:2
+OK   s3 attendu output:2
+    cookie=0x0, duration=2.229s, table=0, n_packets=3, n_bytes=294, priority=1,in_port=3,dl_src=00:00:00:00:00:01,dl_dst=00:00:00:00:00:04 actions=output:2
+
+=== Phase 7 : iperf3 TCP et UDP h1 -> h4 ===
+h1 $ iperf3 -c 10.0.0.4 -p 5201 -t 10 -J --get-server-output 
+h1 $ iperf3 -c 10.0.0.4 -p 5201 -t 10 -J --get-server-output -u -b 50M
+h1 $ iperf3 -c 10.0.0.4 -p 5201 -t 10 -J --get-server-output -u -b 80M
+h1 $ iperf3 -c 10.0.0.4 -p 5201 -t 10 -J --get-server-output -u -b 100M
+
+=== Phase 8 : PCAP borne + snapshots OpenFlow avant/apres ===
+h1 $ iperf3 -c 10.0.0.4 -p 5201 -t 10 -J --get-server-output -u -b 50M
+*** Stopping 1 controllers
+c0 
+*** Stopping 6 links
+......
+*** Stopping 3 switches
+s1 s2 s3 
+*** Stopping 4 hosts
+h1 h2 h3 h4 
+*** Done
+
+*** Preuves dans /home/dguffon/ProjetTelecom3/ScenarioA/experiments/run-20261116T125729Z

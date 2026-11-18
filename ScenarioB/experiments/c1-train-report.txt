@@ -1,0 +1,22 @@
+|--- thp_dl_ma_mbps <= 8.12
+|   |--- class: low
+|--- thp_dl_ma_mbps >  8.12
+|   |--- thp_dl_ma_mbps <= 14.79
+|   |   |--- class: normal
+|   |--- thp_dl_ma_mbps >  14.79
+|   |   |--- class: high
+
+{
+  "version": "dt-v1-c1",
+  "n_train": 118,
+  "n_per_class": {
+    "high": 39,
+    "low": 39,
+    "normal": 40
+  },
+  "train_accuracy": 1.0,
+  "thresholds_mbps": [
+    8.12,
+    14.787
+  ]
+}

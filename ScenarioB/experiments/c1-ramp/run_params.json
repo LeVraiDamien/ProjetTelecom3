@@ -1,0 +1,11 @@
+{
+  "run_id": "c1-ramp",
+  "plan": "idle:6,dl:5M:12,dl:12M:12,dl:18M:12,dl:32M:12,dl:18M:12,dl:12M:12,dl:5M:12,idle:8",
+  "apps": [
+    "kpm",
+    "ai",
+    "rm"
+  ],
+  "data_endpoint": "10.20.6.30",
+  "traffic": "iperf3 UDP, client cote UE ; -R pour le descendant"
+}

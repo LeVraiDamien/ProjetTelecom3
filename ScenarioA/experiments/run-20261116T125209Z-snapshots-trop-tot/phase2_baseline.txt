@@ -1,0 +1,21 @@
+$ ovs-vsctl show
+41a11d4b-a50f-495b-881f-b24cc0f8d1b4
+    Bridge s1
+        fail_mode: standalone
+        Port s1
+            Interface s1
+                type: internal
+        Port s1-eth2
+            Interface s1-eth2
+        Port s1-eth1
+            Interface s1-eth1
+    ovs_version: "3.3.9"
+
+pingall loss = 0.0 %
+
+Etat apres nettoyage (tout doit etre vide) :
+{
+  "ovs_bridges": [],
+  "mininet_links": [],
+  "mininet_processes": ""
+}

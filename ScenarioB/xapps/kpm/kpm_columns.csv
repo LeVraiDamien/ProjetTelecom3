@@ -1,0 +1,22 @@
+column,source,unit,type,definition
+run_id,xApp (variable RUN_ID),-,texte,identifiant de l'experience
+obs_time_utc,xApp (horloge du conteneur),UTC ISO 8601,texte,instant de reception de l'indication par l'xApp
+obs_epoch_s,xApp (horloge du conteneur),s,reel,meme instant en secondes Unix
+collect_start_raw,E2SM-KPM en-tete format 1 (collectStartTime),non verifie,entier,valeur brute renvoyee par le gNB ; non comparable a une heure Unix avec cette paire OCUDU/FlexRIC - ne pas l'utiliser comme horodatage
+requested_period_ms,abonnement,ms,entier,periode de rapport demandee (1000)
+delta_prev_ms,xApp (calcule),ms,reel,ecart mesure avec l'indication precedente (-1 pour la premiere) ; ~1067 ms observes car la radio ZeroMQ tourne plus lentement que le temps reel
+e2_node_type,E2AP,-,texte,type du noeud E2 (ngran_gNB_DU)
+e2_node_id,E2AP,-,entier,identifiant du gNB
+cell_id,-,-,texte,unavailable : non fourni par l'indication KPM format 1
+ue_id,-,-,texte,unavailable : mesures au niveau du noeud E2 (agregat cellule) et non par UE
+meas_data_lst_len,E2SM-KPM,-,entier,nombre d'enregistrements dans l'indication (1 attendu)
+meas_record_len,E2SM-KPM,-,entier,nombre de valeurs par enregistrement (= nombre de mesures demandees)
+n_values,xApp (calcule),-,entier,nombre total de valeurs recues
+names_in_indication,E2SM-KPM,-,0/1,1 si le gNB a renvoye la liste des noms de mesure
+reported_names,E2SM-KPM,-,texte,noms renvoyes par le gNB dans l'ordre (verification de l'ordre des colonnes)
+mapping_status,xApp (calcule),-,texte,ok si n_values = nombre de mesures demandees ; sinon count_mismatch et valeurs laissees vides
+DRB.UEThpDl,E2SM-KPM (OCUDU e2sm_kpm_metric_defs.h),kbit/s,reel,debit descendant atteint : octets de PDU RLC emis (en-tetes RLC/PDCP/SDAP compris) / periode de mesure du DU
+DRB.UEThpUl,E2SM-KPM (OCUDU e2sm_kpm_metric_defs.h),kbit/s,reel,debit montant atteint (meme principe cote reception)
+RRU.PrbTotDl,E2SM-KPM (OCUDU e2sm_kpm_metric_defs.h),%,entier,PRB PDSCH utilises en moyenne par slot / PRB de la cellule x 100 (tronque a l'entier)
+RRU.PrbTotUl,E2SM-KPM (OCUDU e2sm_kpm_metric_defs.h),%,entier,idem pour le PUSCH
+DRB.RlcSduDelayDl,E2SM-KPM (OCUDU e2sm_kpm_metric_defs.h),0.1 ms,reel,delai moyen des SDU RLC descendants (15.4 = 1.54 ms) ; VIDE quand aucune SDU n'a ete emise dans la periode (le gNB renvoie 'no value')

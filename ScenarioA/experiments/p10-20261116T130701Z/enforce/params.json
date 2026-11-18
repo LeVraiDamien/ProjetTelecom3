@@ -1,0 +1,73 @@
+{
+  "mode": "enforce",
+  "link": {
+    "bw": 100,
+    "delay": "1ms",
+    "loss": 0,
+    "max_queue_size": 1000,
+    "use_tbf": true
+  },
+  "single_duration_s": 8,
+  "compete_duration_s": 20,
+  "pcap_delay_s": 8,
+  "pcap_filter": "udp and dst host 10.0.0.4 and dst port 5201",
+  "pcap_limit": 25000,
+  "snapshot_settle_s": 4,
+  "tests": [
+    {
+      "name": "single_tcp",
+      "cmd": "iperf3 -c 10.0.0.4 -p 5201 -t 8 -J --get-server-output ",
+      "start": 1794834500.8791306,
+      "end": 1794834509.2748208,
+      "src": "10.0.0.1",
+      "dst": "10.0.0.4",
+      "proto": "TCP",
+      "dport": 5201,
+      "expected_class": "TCP_BULK"
+    },
+    {
+      "name": "single_udp_50M",
+      "cmd": "iperf3 -c 10.0.0.4 -p 5201 -t 8 -J --get-server-output -u -b 50M",
+      "start": 1794834512.275395,
+      "end": 1794834520.36171,
+      "src": "10.0.0.1",
+      "dst": "10.0.0.4",
+      "proto": "UDP",
+      "dport": 5201,
+      "expected_class": "UDP_BULK"
+    },
+    {
+      "name": "single_udp_1M_small",
+      "cmd": "iperf3 -c 10.0.0.4 -p 5201 -t 8 -J --get-server-output -u -b 1M -l 200",
+      "start": 1794834523.3624072,
+      "end": 1794834531.4495587,
+      "src": "10.0.0.1",
+      "dst": "10.0.0.4",
+      "proto": "UDP",
+      "dport": 5201,
+      "expected_class": "UDP_LIGHT"
+    },
+    {
+      "name": "compete_tcp",
+      "cmd": "iperf3 -c 10.0.0.3 -p 5202 -t 20 -J --get-server-output ",
+      "start": 1794834538.4775305,
+      "end": 1794834558.830429,
+      "src": "10.0.0.2",
+      "dst": "10.0.0.3",
+      "proto": "TCP",
+      "dport": 5202,
+      "expected_class": "TCP_BULK"
+    },
+    {
+      "name": "compete_udp_80M",
+      "cmd": "iperf3 -c 10.0.0.4 -p 5201 -t 20 -J --get-server-output -u -b 80M",
+      "start": 1794834538.4775305,
+      "end": 1794834558.830429,
+      "src": "10.0.0.1",
+      "dst": "10.0.0.4",
+      "proto": "UDP",
+      "dport": 5201,
+      "expected_class": "UDP_BULK"
+    }
+  ]
+}

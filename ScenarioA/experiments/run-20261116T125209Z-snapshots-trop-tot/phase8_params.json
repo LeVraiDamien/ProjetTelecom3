@@ -1,0 +1,14 @@
+{
+  "flow": "h1 10.0.0.1 -> h4 10.0.0.4 UDP dport 5201",
+  "dst_mac_h4": "00:00:00:00:00:04",
+  "src_mac_h1": "00:00:00:00:00:01",
+  "offered_rate": "50M",
+  "duration_s": 10,
+  "capture_interface": "h1-eth0",
+  "capture_filter": "udp and src host 10.0.0.1 and dst host 10.0.0.4 and dst port 5201",
+  "capture_packet_limit": 25000,
+  "capture_snaplen": 128,
+  "iperf3_start_epoch": 1794833602.2752721,
+  "iperf3_cmd": "iperf3 -c 10.0.0.4 -p 5201 -t 10 -J --get-server-output -u -b 50M",
+  "iperf3_end_epoch": 1794833612.338498
+}

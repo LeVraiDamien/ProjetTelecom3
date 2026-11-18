@@ -1,0 +1,14 @@
+project3-srsue	telecom-lab-srsue:1.0	Up About a minute
+project3-ocudu-gnb	telecom-lab-ocudu-gnb:1.0	Up About a minute
+project3-dn-endpoint	telecom-lab-srsue:1.0	Up 22 minutes
+project3-flexric	telecom-lab-flexric:1.0	Up 26 minutes
+project3-ric-lab_ran-net 10.20.11.0/24 :: project3-flexric=10.20.11.30/24 project3-ocudu-gnb=10.20.11.10/24 project3-srsue=10.20.11.20/24 
+n2-net 10.20.2.0/24 :: project3-ocudu-gnb=10.20.2.11/24 open5gs-and-ueransim-amf-1=10.20.2.12/24 
+n3-net 10.20.3.0/24 :: project3-ocudu-gnb=10.20.3.11/24 open5gs-and-ueransim-upf-1=10.20.3.14/24 
+lo               UNKNOWN        127.0.0.1/8 ::1/128 
+n2@if278         UP             10.20.2.11/24 
+n3@if279         UP             10.20.3.11/24 
+ran@if280        UP             10.20.11.10/24 
+telecom-lab-ocudu-gnb:1.0 2c7e179465dd 218MB
+telecom-lab-srsue:1.0 ab35b12d00b6 166MB
+telecom-lab-flexric:1.0 5443437ab21c 1.92GB

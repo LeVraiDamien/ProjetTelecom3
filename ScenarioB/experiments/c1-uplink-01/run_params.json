@@ -1,0 +1,11 @@
+{
+  "run_id": "c1-uplink-01",
+  "plan": "idle:6,ul:1M:15,idle:5,ul:2M:15,idle:5,ul:3M:15,idle:5,ul:5M:15,idle:6",
+  "apps": [
+    "kpm",
+    "ai",
+    "rm"
+  ],
+  "data_endpoint": "10.20.6.30",
+  "traffic": "iperf3 UDP, client cote UE ; -R pour le descendant"
+}
